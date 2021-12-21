@@ -1,22 +1,5 @@
 {
-  "README": "Consider to NOT remove sample translations below (and this comment), until you will implement any REAL feature, which uses the same flow of translations",
-  "NAVIGATION": {
-    "HOME": "Home Page",
-    "OTHER_PAGE": "Other page"
-  },
   "MAIN": {
-    "WELCOME": "Welcome to \"Another React Starter\"",
-    "MORE_INFO": "Get more info"
-  },
-  "OTHER_PAGE": {
-    "CONTENT": "Sample page",
-    "SWITCH_LANGUAGE": {
-      "BUTTON": "Switch language"
-    },
-    "LODASH_EXAMPLE": {
-      "HEADER": "Example of LODASH library usage",
-      "ARRAY": "Full array",
-      "LAST_ELEMENT": "Last element of thew array"
-    }
+    "WELCOME": "Welcome to \"Plan of Attack\""
   }
 }

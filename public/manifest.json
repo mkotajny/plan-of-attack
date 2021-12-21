@@ -1,9 +1,9 @@
 {
   "short_name": "React App",
-  "name": "Another React Starter",
+  "name": "Plan of Attack",
   "icons": [
     {
-      "src": "steam_favicon.png",
+      "src": "planOfAttack-favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

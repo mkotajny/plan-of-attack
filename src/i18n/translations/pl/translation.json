@@ -1,22 +1,5 @@
 {
-  "README": "Consider to NOT remove sample translations below (and this comment), until you will implement any REAL feature, which uses the same flow of translations",
-  "NAVIGATION": {
-    "HOME": "Strona Główna",
-    "OTHER_PAGE": "Inna strona"
-  },
   "MAIN": {
-    "WELCOME": "Witaj w \"Kolejnym Starterze React\"",
-    "MORE_INFO": "Uzyskaj więcej informacji"
-  },
-  "OTHER_PAGE": {
-    "CONTENT": "Strona testowa",
-    "SWITCH_LANGUAGE": {
-      "BUTTON": "Przełącz język"
-    },
-    "LODASH_EXAMPLE": {
-      "HEADER": "Przykład użycia biblioteki LODASH",
-      "ARRAY": "Kompletna tablica",
-      "LAST_ELEMENT": "Ostatni element tablicy"
-    }
+    "WELCOME": "Witaj w aplikacji \"Plan of Attack\""
   }
 }

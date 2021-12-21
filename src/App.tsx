@@ -1,10 +1,9 @@
-import Navigation from './components/Navigation';
 import AppRoutes from './routing/AppRoutes';
 import styles from './App.module.css';
 
 const App = () => (
   <div className={styles.app}>
-    <Navigation />
+    {/* <Navigation /> */}
     <AppRoutes />
   </div>
 );

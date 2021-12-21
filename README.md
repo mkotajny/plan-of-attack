@@ -1,19 +1,19 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/33925073/146369487-1535e133-045f-4f32-ad9c-d74a952728bf.jpg" />
+  <img src="https://user-images.githubusercontent.com/33925073/146893835-d527501b-ef41-49ac-b2fa-f197f5a2048f.png" />
 </p>
-<h1 align="center">Oh boy &#128580;<br/>Another React Starter ?</h1>
+<h1 align="center"><br/>Plan of Attack</h1>
 <br/><br/><br/>
 
 # About the project
 
-**_"Another React Starter"_** is a set of extra-configuration and extra-libraries, which boosts start of **React** projects. So the main goal for this project - is an **initial-config time saver** .
+**_"Plan of Attack"_** is an application for **creation of any plan** (e.g. **action plan** or any nested set of items).
 
-This repo is inspired by similar project named [react-starter-boilerplate](https://github.com/TheSoftwareHouse/react-starter-boilerplate) and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is bootstrapped with [another-react-starter](https://github.com/mkotajny/another-react-starter) .
 <br/><br/>
 
-# Modules in the starter
+# Modules in the project
 
-The starter contains many parts. Some of them are components, some of them are libraries. I've decided to call them as "**modules**" .
+The project contains many parts. Some of them are components, some of them are libraries. These elements are named "**modules**" in this readme doc.
 
 <table>
 	<thead>
@@ -33,7 +33,7 @@ The starter contains many parts. Some of them are components, some of them are l
 				<a href="https://reactjs.org" target="_blank"><b>React</b></a>
 			</td>
 			<td style="border: 1px solid">
-				Core of the starter - a JavaScript library for building user interfaces
+				Core of the apllication UI - a JavaScript library for building user interfaces
 			</td>
 			<td style="border: 1px solid">-</td>
 		</tr>
@@ -121,29 +121,10 @@ Please be aware, that this project is configured for usage of [yarn](https://yar
 To start the development, run:
 
 ```
-//create a folder for your project
-mkdir new-project
+//navigate to the parent folder dedicated for this project
 
-//enter into the folder
-cd new-project
-
-// clone another-react-starter repo (add a dot at the end ! - to clone to the current folder)
-git clone https://github.com/mkotajny/another-react-starter.git .
-
-// remove .git folder from the cloned repo
-sudo rm -r .git
-
-// initialize your git repo for your project
-git init
-
-// set remote to your github repo
-git remote add origin [url to your github repo]
-git remote -v
-
-// make a first commit to your repo
-git add .
-git commit -m 'initial commit'
-git push origin master
+// clone plan-of-attack repo
+git clone https://github.com/mkotajny/plan-of-attack.git
 
 // install the boilerplate for your new app
 yarn install
@@ -152,9 +133,15 @@ yarn install
 yarn start
 ```
 
-<br/><br/><a id="react-router" ></a>
+<br/><br/>
 
-# React Router
+# Project modules
+
+This section describes details about modules used in this project (listed in the table from previous section)
+
+<br/><a id="react-router" ></a>
+
+## React Router
 
 To check how React Router is implemented in the app - open (and analyze simple code) files listed below:
 
@@ -163,25 +150,27 @@ To check how React Router is implemented in the app - open (and analyze simple c
 
 <br/><br/><a id="typescript" ></a>
 
-# Typescript
+## Typescript
 
-## Rules customization
+### Rules customization
 
 The easiest way of customization of Typescript/Prettier/ESLint rules is to edit <b>tsconfig.json</b> file (located in the root folder of the project).
 
 <br/><br/><a id="prettier" ></a>
 
-# Prettier
+## Prettier
 
-## Rules customization
+### Rules customization
 
 The easiest way of customization of Typescript/Prettier/ESLint rules is to edit <b>.prettierc</b> file (located in the root folder of the project).
 
 <br/>
 
-## Using of Prettier in the project
+### Using of Prettier in the project
 
-### Manually
+<br/>
+
+**Manually**
 
 via terminal run command, which should fix or prettier issues in the project files.:
 
@@ -193,23 +182,27 @@ yarn format:fix
 
 Recommendation: install also **"Prettier" plugin** in your IDE (e.g. "VS code"), where you may configure the plugin for run prettier on every save of changes on any project file. For the "VS code" - the configuration (for the mentioned plugin) is already added into ".csCode" folder in the project, but to use this config - you must install the Prettier plugin.
 
-## Automatic run with the pre-commit hook
+<br/>
+
+**Automatic run with the pre-commit hook**
 
 Prettier automatically runs (fixes prettier issues in the project files) on every commit to the git repository.
 
 <br/><br/><a id="eslint" ></a>
 
-# ESLint
+## ESLint
 
-## Rules customization
+### Rules customization
 
 The easiest way of customization of Typescript/Prettier/ESLint rules is to edit <b>.eslintrc.js</b> file (located in the root folder of the project).
 
 <br/>
 
-## Using of ESLint in the project
+### Using of ESLint in the project
 
-### Manually
+<br/>
+
+**Manually**
 
 via terminal run command, which should list (doesn't fix!) ESlint issues in the project files.:
 
@@ -225,17 +218,28 @@ yarn validate
 
 ... which does both (prettier and linting): fixes Prettier issues and shows or ESlint issues.
 
-## Automatic run with the pre-commit hook
+<br/>
+
+**Automatic run with the pre-commit hook**
 
 ESLint automatically runs on every commit-attempt to the git repository, so the hook **prevents developer from committing** changes with unresolved ESlint-issues in the code.
 
+Make sure that pre-commit hook **runs on every commit** (run of prettier+ESlint + unit tests). If not (e.g. message _"The 'pre-commit' hook was ignored because it's not set as executable"_ appears), than you have to set pre-commit file as executable. To do this, go (using the terminal) to the .husky directory and run:
+
+```
+chmod +x .git/hooks/pre-commit
+```
+
+... and make sure again, that the pre-commit hooks triggers on every commit.
+
 <br/><br/><a id="i18n" ></a>
 
-# i18next
+## i18next
 
-## How it works
+### How it works
 
-The "another-react-starter" contains a sample UI Texts (like "_Welcome to Another React Starter_" in English and Polish). These texts are located in the /src/i18n/translations folder and all of them are used in the starter application - for example they are invoked in the _OtherPage/index.tsx_ file , with _useTranslate_ hook:
+The UI Texts are located in the /src/i18n/translations folder.
+In the application these text are invoked using _useTranslation_ hook:
 
 ```
 import { useTranslation } from 'react-i18next';
@@ -247,11 +251,11 @@ const { t } = useTranslation();
 
 <br/><br/><a id="lodash" ></a>
 
-# Lodash
+## Lodash
 
-## How it works
+### How it works
 
-Lodash "in action" is on the same example component - _OtherPage/index.tsx_:
+Example of using _Lodash_ library:
 
 ```
 import _ from 'lodash';
@@ -264,14 +268,14 @@ const sampleArray: Array<string> = ['1stt', '2nd', '3rd'];
 
 <br/>
 
-## Check the progress state of your translations
+### Check the progress state of your translations
 
-The starter contains [translation-check](https://github.com/locize/translation-check) plugin, useful mostly for catching e.g. untranslated message-keys.
+The project contains [translation-check](https://github.com/locize/translation-check) plugin, useful mostly for catching e.g. untranslated message-keys.
 Just go to this url http://localhost:3000?showtranslations (when your app runs of course), to check the statistics of _translation-check_ plugin.
 
 <br/><br/>
 
-# Useful Scripts
+## Useful Scripts
 
 In the project directory, you can run:
 
