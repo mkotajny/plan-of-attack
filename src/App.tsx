@@ -1,10 +1,13 @@
 import AppRoutes from './routing/AppRoutes';
-import styles from './App.module.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import muiTheme from './muiTheme';
 
 const App = () => (
-  <div className={styles.app}>
+  <ThemeProvider theme={muiTheme}>
+    <CssBaseline enableColorScheme />
     {/* <Navigation /> */}
     <AppRoutes />
-  </div>
+  </ThemeProvider>
 );
 export default App;

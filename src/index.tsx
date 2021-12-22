@@ -4,6 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import './i18n/i18n';
 import App from './App';
 import reportWebVitals from './reportWebVitals.js';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import './index.css';
 
 ReactDOM.render(

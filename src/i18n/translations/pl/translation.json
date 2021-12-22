@@ -1,5 +1,6 @@
 {
   "MAIN": {
-    "WELCOME": "Witaj w aplikacji \"Plan of Attack\""
+    "WELCOME": "Witaj w aplikacji \"Plan of Attack\"",
+    "BUTTON": "Przykładowy przycisk z Material UI"
   }
 }
