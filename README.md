@@ -239,7 +239,7 @@ ESLint automatically runs on every commit-attempt to the git repository, so the 
 Make sure that pre-commit hook **runs on every commit** (run of prettier+ESlint + unit tests). If not (e.g. message _"The 'pre-commit' hook was ignored because it's not set as executable"_ appears), than you have to set pre-commit file as executable. To do this, go (using the terminal) to the .husky directory and run:
 
 ```
-chmod +x .git/hooks/pre-commit
+chmod +x pre-commit
 ```
 
 ... and make sure again, that the pre-commit hooks triggers on every commit.
