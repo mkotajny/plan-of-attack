@@ -39,7 +39,7 @@
     "format:fix": "prettier . --ignore-path .gitignore --write",
     "lint": "eslint --ext .tsx,.ts .",
     "type:check": "tsc",
-    "validate": "run-p format:fix lint type:check format:check",
+    "validate": "npm-run-all --parallel format:fix lint type:check format:check",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -63,7 +63,6 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-security": "^1.4.0",
