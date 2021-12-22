@@ -26,7 +26,7 @@ The project contains many parts. Some of them are components, some of them are l
 	</thead>
 	<tbody>
 		<tr>
-			<td style="border: 1px solid">UI</td>
+			<td style="border: 1px solid">UI libraries</td>
 			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/144419384-1deb6fde-61f3-48e3-9e5f-d57ac4530028.png" />
 				<br/>
@@ -38,7 +38,7 @@ The project contains many parts. Some of them are components, some of them are l
 			<td style="border: 1px solid">-</td>
 		</tr>
 		<tr>
-			<td style="border: 1px solid">UI</td>
+			<td style="border: 1px solid">UI libraries</td>
 			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/145827319-a9141ca2-4018-49df-9a0e-bf84f26d0e60.png" />
 				<br/>
@@ -48,6 +48,18 @@ The project contains many parts. Some of them are components, some of them are l
 				Collection of React components, hooks and utilities that make it easy to build multi-page applications with React
 			</td>
 			<td style="border: 1px solid"><a href="#react-router">redirect</a></td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid">UI libraries</td>
+			<td style="border: 1px solid; text-align: center">
+				<img src="https://user-images.githubusercontent.com/33925073/147070316-85e9038a-84de-4ff5-b065-ffb6eafe47f2.png" />
+				<br/>
+				<a href="https://mui.com" target="_blank"><b>Material UI</b></a>
+			</td>
+			<td style="border: 1px solid">
+				A library of foundational and advanced components, enabling to build own design system and develop React applications faster
+			</td>
+			<td style="border: 1px solid">-</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid">Code Quality</td>
@@ -135,7 +147,7 @@ yarn start
 
 <br/><br/>
 
-# Project modules
+# More info about project modules
 
 This section describes details about modules used in this project (listed in the table from previous section)
 
@@ -148,7 +160,7 @@ To check how React Router is implemented in the app - open (and analyze simple c
 - src/index.tsx - look for usage _BrowserRouter_ component
 - arc/App.tsx - look for _Navigation_ and _AppRoutes_ components
 
-<br/><br/><a id="typescript" ></a>
+<br/><a id="typescript" ></a>
 
 ## Typescript
 
@@ -156,7 +168,7 @@ To check how React Router is implemented in the app - open (and analyze simple c
 
 The easiest way of customization of Typescript/Prettier/ESLint rules is to edit <b>tsconfig.json</b> file (located in the root folder of the project).
 
-<br/><br/><a id="prettier" ></a>
+<br/><a id="prettier" ></a>
 
 ## Prettier
 

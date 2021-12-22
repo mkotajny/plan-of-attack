@@ -1,5 +1,6 @@
 {
   "MAIN": {
-    "WELCOME": "Welcome to \"Plan of Attack\""
+    "WELCOME": "Welcome to \"Plan of Attack\"",
+    "BUTTON": "Sample Material UI button"
   }
 }

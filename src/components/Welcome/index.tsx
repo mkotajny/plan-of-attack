@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { Button } from '@mui/material';
+
 import styles from './welcome.module.css';
 
 const Welcome = () => {
@@ -11,6 +13,7 @@ const Welcome = () => {
         alt='logo'
       />
       <p>{t('MAIN.WELCOME')}</p>
+      <Button variant='contained'>{t('MAIN.BUTTON')}</Button>
     </header>
   );
 };
