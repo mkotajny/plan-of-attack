@@ -1,4 +1,4 @@
-import Welcome from '../../components/Welcome';
+import Welcome from '../../components/nonShared/Welcome';
 
 const HomePage = () => <Welcome />;
 
