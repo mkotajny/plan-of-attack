@@ -1,7 +1,9 @@
 {
   "WELCOME_PAGE": {
+    "FLAG_TOOLTIP": "Przełącz język",
     "TITLE": "PLAN ATAKU",
     "SUBTITLE": "Opracuj plan na realizację dowolnego celu",
-    "BUTTON_START": "START"
+    "BUTTON_START": "ROZPOCZNIJ",
+    "BUTTON_START_TOOLTIP": "Już wkrótce ..."
   }
 }

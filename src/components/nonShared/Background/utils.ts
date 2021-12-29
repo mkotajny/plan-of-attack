@@ -1,7 +1,7 @@
 import { randomIntFromRange } from '../../../common/utils/utils';
-import BattlePlanImage from '../../../assets/images/battle-plan.jpg';
-import FootballBoardImage from '../../../assets/images/football-board.jpg';
-import WarPlanesImage from '../../../assets/images/war-planes.jpg';
+import BattlePlanImage from '../../../assets/images/backgrounds/battle-plan.jpg';
+import FootballBoardImage from '../../../assets/images/backgrounds/football-board.jpg';
+import WarPlanesImage from '../../../assets/images/backgrounds/war-planes.jpg';
 
 const backgrounds = [
   { fileName: BattlePlanImage, overlay: 0.85 },
