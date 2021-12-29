@@ -1,6 +1,7 @@
 {
-  "MAIN": {
-    "WELCOME": "Witaj w aplikacji \"Plan of Attack\"",
-    "BUTTON": "Przykładowy przycisk z Material UI"
+  "WELCOME_PAGE": {
+    "TITLE": "PLAN ATAKU",
+    "SUBTITLE": "Opracuj plan na realizację dowolnego celu",
+    "BUTTON_START": "START"
   }
 }

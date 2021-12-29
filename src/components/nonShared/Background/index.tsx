@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChildrenComponentType } from 'types/commonTypes';
+import { ChildrenComponentType } from 'common/types/commonTypes';
 import { getRandomBackgroundConfig } from './utils';
 import { useStyles } from './styles';
 
