@@ -1,6 +1,9 @@
 {
-  "MAIN": {
-    "WELCOME": "Welcome to \"Plan of Attack\"",
-    "BUTTON": "Sample Material UI button"
+  "WELCOME_PAGE": {
+    "FLAG_TOOLTIP": "Switch language",
+    "TITLE": "Plan of Attack",
+    "SUBTITLE": "Develop a plan to meet any goal",
+    "BUTTON_START": "Start",
+    "BUTTON_START_TOOLTIP": "Coming soon ..."
   }
 }

@@ -1,6 +1,6 @@
 const enum AppRoute {
   home = '/',
-  otherPage = 'otherPage',
+  // otherPage = 'otherPage',
 }
 
 export default AppRoute;
