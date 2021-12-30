@@ -1,12 +1,14 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/33925073/147665032-dbe03531-7970-47f9-8820-44a1b7a8eef5.png" />
 </p>
-<h1 align="center"><br/>Plan of Attack</h1>
+<h1 align="center">Plan of Attack</h1>
 <br/><br/><br/>
 
 # About the project
 
 **_"Plan of Attack"_** is an application for **creation of any plan** (e.g. **action plan** or any nested set of items).
+
+The application is in the ongoing development phase. The staging server of the working app (demo) is [here](https://plan-of-attack.netlify.app).
 
 This project is bootstrapped with [another-react-starter](https://github.com/mkotajny/another-react-starter) .
 <br/><br/>
@@ -144,6 +146,17 @@ yarn install
 // run the boilerplate
 yarn start
 ```
+
+<br/><br/>
+
+# PWA (Progressive Web App)
+
+To run the application as PWA on Android mobile device:
+
+1. run web browser (e.g. Chrome) on your mobile device
+2. open the app [url](https://plan-of-attack.netlify.app) in the browser (on the same mobile device of course)
+3. after successful load of the page - run context menu (of your web browser), choose "**_Add to Home screen_**", and follow further instructions
+4. open the same application again, however this time not from your web browser, but from the **direct shortcut** (visible as a separate app) in your mobile device.
 
 <br/><br/>
 
