@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { ChildrenComponentType } from 'common/types/commonTypes';
 import { getRandomBackgroundConfig } from './utils';
 import { useStyles } from './styles';
 
-const Background = ({ children }: ChildrenComponentType) => {
-  const [classes] = useState(useStyles(getRandomBackgroundConfig()));
+import { BackgroundPropsType } from './types';
+
+const Background = ({ children, homePage }: BackgroundPropsType) => {
+  const backGroundImage = homePage ? getRandomBackgroundConfig() : { fileName: '', overlay: 0 };
+  const [classes] = useState(useStyles(backGroundImage));
   return <div className={classes.paperContainer}>{children}</div>;
 };
 

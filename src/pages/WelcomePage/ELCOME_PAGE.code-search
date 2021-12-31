@@ -1,0 +1,31 @@
+# Query: ELCOME_PAGE
+# ContextLines: 1
+
+6 results - 4 files
+
+src/components/nonShared/LanguageSwitcher/index.tsx:
+  16    return (
+  17:     <Tooltip placement='left' arrow title={t('PAGES.WELCOME.FLAG_TOOLTIP')!}>
+  18        <div
+
+src/i18n/translations/en/translation.json:
+  2    "PAGES:": {
+  3:     "WELCOME_PAGE": {
+  4        "FLAG_TOOLTIP": "Switch language",
+
+src/i18n/translations/pl/translation.json:
+  2    "PAGES:": {
+  3:     "WELCOME_PAGE": {
+  4        "FLAG_TOOLTIP": "Przełącz język",
+
+src/pages/WelcomePage/index.tsx:
+  18        <Typography variant='h4'>
+  19:         <div className={classes.mainTitle}>{t('PAGES.WELCOME.TITLE')}</div>
+  20        </Typography>
+  21        <Typography variant='h6'>
+  22:         <div className={classes.subTitle}>{t('PAGES.WELCOME.SUBTITLE')}</div>
+  23        </Typography>
+
+  32          >
+  33:           {t('PAGES.WELCOME.BUTTON_START')}
+  34          </Button>

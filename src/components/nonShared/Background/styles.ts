@@ -3,12 +3,15 @@ import { Theme } from '@mui/material';
 
 export const useStyles = makeStyles<Theme, { fileName: string; overlay: number }>({
   paperContainer: {
-    background: ({ overlay, fileName }) => `
+    background: ({ overlay, fileName }) =>
+      fileName
+        ? `
     linear-gradient(
       rgba(0, 0, 0, ${overlay}),
       rgba(0, 0, 0, ${overlay})
     ),
-    url(${fileName}) center/cover no-repeat `,
+    url(${fileName}) center/cover no-repeat `
+        : ``,
     height: '100vh',
   },
 });

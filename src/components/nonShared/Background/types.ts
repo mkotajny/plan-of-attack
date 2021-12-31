@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ChildrenComponentType = {
+export type BackgroundPropsType = {
   children: ReactNode;
+  homePage: boolean;
 };

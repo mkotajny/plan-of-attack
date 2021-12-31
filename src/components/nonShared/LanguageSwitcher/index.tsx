@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <Tooltip placement='left' arrow title={t('WELCOME_PAGE.FLAG_TOOLTIP')!}>
+    <Tooltip placement='left' arrow title={t('PAGES.WELCOME.FLAG_TOOLTIP')!}>
       <div
         className={classes.flagContainer}
         onClick={() => {
