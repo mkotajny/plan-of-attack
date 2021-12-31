@@ -1,12 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 import WelcomePage from '../pages/WelcomePage';
-// import OtherPage from '../pages/OtherPage';
-import AppRoute from './AppRoute.enum';
+import PlansPage from 'pages/PlansPage';
+import AppRouteEnum from './AppRoute.enum';
 
 const AppRoutes = () => (
   <Routes>
-    <Route path={AppRoute.home} element={<WelcomePage />} />
-    {/* <Route path={AppRoute.otherPage} element={<OtherPage />} /> */}
+    <Route path={AppRouteEnum.home} element={<WelcomePage />} />
+    <Route path={AppRouteEnum.plans} element={<PlansPage />} />
+    <Route
+      path='*'
+      element={
+        <main style={{ padding: '1rem' }}>
+          <p>There is nothing here!</p>
+        </main>
+      }
+    />
   </Routes>
 );
 
