@@ -6,5 +6,6 @@ export type ProfileType = {
 export type AuthStateType = {
   signedIn: boolean;
   inProgress: boolean;
+  googleInitialized: boolean;
   profile: ProfileType;
 };
