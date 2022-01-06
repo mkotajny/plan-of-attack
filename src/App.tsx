@@ -1,12 +1,12 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/material';
-import muiTheme from '../../muiTheme';
+import muiTheme from 'muiTheme';
 import { useLocation } from 'react-router-dom';
 
-import TopBar from 'components/nonShared/TopBar';
-import Background from '../nonShared/Background';
-import AppRoutes from '../../routing/AppRoutes';
+import TopBar from 'features/TopBar';
+import Background from 'features/Background';
+import AppRoutes from 'routing/AppRoutes';
 import AppRouteEnum from 'routing/AppRoute.enum';
 
 const App = () => {
