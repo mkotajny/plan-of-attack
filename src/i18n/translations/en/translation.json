@@ -8,11 +8,21 @@
       "BUTTON_START_TOOLTIP": "Coming soon ..."
     },
     "PLANS": {
-      "TITLE": "Plans Review"
+      "TITLE": "Plans Review",
+      "CONTENT_SIGNED_OUT": "Sign in to see more ...",
+      "CONTENT_WELCOME": "Welcome",
+      "CONTENT_SIGNED_IN": "More of beautiful features coming soon"
     }
   },
-  "TOP_BAR": {
-    "LOGIN": "Login",
-    "LOGIN_TOOLTIP": "Login via google-authentication"
+  "FEATURES": {
+    "GOOGLE_AUTH": {
+      "SIGN_IN": "Sign in",
+      "SIGN_IN_TOOLTIP": "Sign in via Google account",
+      "SIGN_OUT": "Sign out",
+      "NOTIFICATION_SNAKS": {
+        "INITIALIZATION_ERROR": "Initialization of Google authentication failed",
+        "OTHER_ERROR": "Google authentication failed"
+      }
+    }
   }
 }

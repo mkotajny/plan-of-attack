@@ -7,7 +7,7 @@ const initialState: AuthStateType = {
   inProgress: true,
   googleInitialized: false,
   profile: {
-    userName: undefined,
+    fullName: undefined,
     imageUrl: undefined,
   },
 };
@@ -19,13 +19,14 @@ export const authSlice = createSlice({
     signIn: (state, action: PayloadAction<ProfileType>) => {
       state.signedIn = true;
       state.inProgress = false;
-      state.profile.userName = action.payload.userName;
+      state.profile.fullName = action.payload.fullName;
+      state.profile.firstName = action.payload.firstName;
       state.profile.imageUrl = action.payload.imageUrl;
     },
     signOut: state => {
       state.signedIn = false;
       state.inProgress = false;
-      state.profile.userName = undefined;
+      state.profile.fullName = undefined;
       state.profile.imageUrl = undefined;
     },
     setInProgress: (state, action: PayloadAction<boolean>) => {

@@ -42,18 +42,6 @@ The project contains many parts. Some of them are components, some of them are l
 		<tr>
 			<td style="border: 1px solid">UI libraries</td>
 			<td style="border: 1px solid; text-align: center">
-				<img src="https://user-images.githubusercontent.com/33925073/145827319-a9141ca2-4018-49df-9a0e-bf84f26d0e60.png" />
-				<br/>
-				<a href="https://reactjs.org" target="_blank"><b>React Router v6</b></a>
-			</td>
-			<td style="border: 1px solid">
-				Collection of React components, hooks and utilities that make it easy to build multi-page applications with React
-			</td>
-			<td style="border: 1px solid"><a href="#react-router">redirect</a></td>
-		</tr>
-		<tr>
-			<td style="border: 1px solid">UI libraries</td>
-			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/147070316-85e9038a-84de-4ff5-b065-ffb6eafe47f2.png" />
 				<br/>
 				<a href="https://mui.com" target="_blank"><b>Material UI</b></a>
@@ -143,7 +131,9 @@ git clone https://github.com/mkotajny/plan-of-attack.git
 // install the boilerplate for your new app
 yarn install
 
-// run the boilerplate
+//fill the .env file wih proper keys/credentials (contact with mkotajny@gmail.com developer to get these values)
+
+// run the project
 yarn start
 ```
 
@@ -163,15 +153,6 @@ To run the application as PWA on Android mobile device:
 # More info about project modules
 
 This section describes details about modules used in this project (listed in the table from previous section)
-
-<br/><a id="react-router" ></a>
-
-## React Router
-
-To check how React Router is implemented in the app - open (and analyze simple code) files listed below:
-
-- src/index.tsx - look for usage _BrowserRouter_ component
-- arc/App.tsx - look for _Navigation_ and _AppRoutes_ components
 
 <br/><a id="typescript" ></a>
 
@@ -274,6 +255,13 @@ const { t } = useTranslation();
 <p>{t('OTHER_PAGE.CONTENT')}</p>
 ```
 
+<br/>
+
+### Check the progress of your translations
+
+The project contains [translation-check](https://github.com/locize/translation-check) plugin, useful mostly for catching e.g. untranslated message-keys.
+Just go to this url http://localhost:3000?showtranslations (when your app runs of course), to check the statistics of _translation-check_ plugin.
+
 <br/><br/><a id="lodash" ></a>
 
 ## Lodash
@@ -290,13 +278,6 @@ const sampleArray: Array<string> = ['1stt', '2nd', '3rd'];
 //"last" function of the lodash library gets last ("3rd") element of the array
 <div>{_.last(sampleArray)}</div>
 ```
-
-<br/>
-
-### Check the progress state of your translations
-
-The project contains [translation-check](https://github.com/locize/translation-check) plugin, useful mostly for catching e.g. untranslated message-keys.
-Just go to this url http://localhost:3000?showtranslations (when your app runs of course), to check the statistics of _translation-check_ plugin.
 
 <br/><br/>
 

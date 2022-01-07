@@ -1,5 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { SnackbarProvider } from 'notistack';
+import SnackbarCloseButton from 'features/SnackbarCloseButton';
 import { Container } from '@mui/material';
 import muiTheme from 'muiTheme';
 import { useLocation } from 'react-router-dom';
@@ -13,16 +15,18 @@ const App = () => {
   const homePage = useLocation().pathname === AppRouteEnum.home;
   return (
     <ThemeProvider theme={muiTheme}>
-      <CssBaseline enableColorScheme />
-      {/* <Navigation /> */}
-      <Background homePage={useLocation().pathname === AppRouteEnum.home}>
-        <div>
-          {!homePage && <TopBar />}
-          <Container maxWidth={false}>
-            <AppRoutes />
-          </Container>
-        </div>
-      </Background>
+      <SnackbarProvider maxSnack={5} action={snackbarKey => <SnackbarCloseButton snackbarKey={snackbarKey} />}>
+        <CssBaseline enableColorScheme />
+        {/* <Navigation /> */}
+        <Background homePage={useLocation().pathname === AppRouteEnum.home}>
+          <div>
+            {!homePage && <TopBar />}
+            <Container maxWidth={false}>
+              <AppRoutes />
+            </Container>
+          </div>
+        </Background>
+      </SnackbarProvider>
     </ThemeProvider>
   );
 };

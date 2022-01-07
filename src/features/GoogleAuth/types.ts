@@ -1,5 +1,6 @@
 export type ProfileType = {
-  userName?: string;
+  fullName?: string;
+  firstName?: string;
   imageUrl?: string;
 };
 
