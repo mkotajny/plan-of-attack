@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 export default createTheme({
   palette: {
     background: {
-      default: '#f5f5f5',
+      default: '#f0f0f0',
     },
   },
   spacing: 8,

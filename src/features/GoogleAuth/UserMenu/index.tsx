@@ -2,10 +2,12 @@ import { Menu, MenuItem, Divider, ListItemIcon } from '@mui/material';
 import { Logout } from '@mui/icons-material';
 import { UserMenuPropsType } from './types';
 import { useStyles, menuPaperProps } from './styles';
+import { useTranslation } from 'react-i18next';
 
 const UserMenu = (props: UserMenuPropsType) => {
   const open = Boolean(props.anchorElement);
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <Menu
@@ -18,13 +20,13 @@ const UserMenu = (props: UserMenuPropsType) => {
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      <div className={classes.menuTitle}>{props.userName}</div>
+      <div className={classes.menuTitle}>{props.fullName}</div>
       <Divider />
       <MenuItem onClick={props.onAuthenticationClick}>
         <ListItemIcon>
           <Logout fontSize='small' />
         </ListItemIcon>
-        Logout
+        {t('FEATURES.GOOGLE_AUTH.SIGN_OUT')}
       </MenuItem>
     </Menu>
   );

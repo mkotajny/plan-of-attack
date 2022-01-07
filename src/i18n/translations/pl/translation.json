@@ -8,11 +8,21 @@
       "BUTTON_START_TOOLTIP": "Już wkrótce ..."
     },
     "PLANS": {
-      "TITLE": "Przegląd planów"
+      "TITLE": "Przegląd planów",
+      "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
+      "CONTENT_WELCOME": "Witaj",
+      "CONTENT_SIGNED_IN": "Więcej pięknych ficzerów wkrótce"
     }
   },
-  "TOP_BAR": {
-    "LOGIN": "Zaloguj się",
-    "LOGIN_TOOLTIP": "Zaloguj się przez google"
+  "FEATURES": {
+    "GOOGLE_AUTH": {
+      "SIGN_IN": "Zaloguj się",
+      "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
+      "SIGN_OUT": "Wyloguj się",
+      "NOTIFICATION_SNAKS": {
+        "INITIALIZATION_ERROR": "Błędna inicjalizacja logowania Google",
+        "OTHER_ERROR": "Błędne logowanie przez Google"
+      }
+    }
   }
 }
