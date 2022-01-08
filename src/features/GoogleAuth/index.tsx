@@ -57,7 +57,7 @@ const GoogleAuth = () => {
     currentUser.signedIn
       ? auth?.signOut()
       : auth
-          ?.signIn()
+          ?.signIn({ prompt: 'select_account' })
           .then()
           .catch(error => {
             dispatch(setInProgress(false));
