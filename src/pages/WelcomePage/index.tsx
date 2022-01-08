@@ -1,5 +1,40 @@
-import Welcome from '../../components/nonShared/Welcome';
+import { useTranslation } from 'react-i18next';
+import { useStyles } from './styles';
+import { useNavigate } from 'react-router-dom';
+import { Typography, Button } from '@mui/material';
 
-const WelcomePage = () => <Welcome />;
+import LanguageSwitcher from 'features/LanguageSwitcher';
+import Logo from '../../assets/images/plan-of-attack-logo.png';
+import AppRouteEnum from 'routing/AppRoute.enum';
+
+const WelcomePage = () => {
+  const { t } = useTranslation();
+  let navigate = useNavigate();
+  const classes = useStyles();
+  return (
+    <div className={classes.rootMarek}>
+      <LanguageSwitcher />
+      <img src={Logo} className={classes.logo} alt='logo' loading='lazy' />
+      <Typography variant='h4'>
+        <div className={classes.mainTitle}>{t('PAGES.WELCOME.TITLE')}</div>
+      </Typography>
+      <Typography variant='h6'>
+        <div className={classes.subTitle}>{t('PAGES.WELCOME.SUBTITLE')}</div>
+      </Typography>
+      <div className={classes.buttonStart}>
+        <Button
+          variant='contained'
+          color='warning'
+          size='large'
+          onClick={() => {
+            navigate(AppRouteEnum.plans);
+          }}
+        >
+          {t('PAGES.WELCOME.BUTTON_START')}
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 export default WelcomePage;
