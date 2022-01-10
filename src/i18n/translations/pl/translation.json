@@ -1,9 +1,28 @@
 {
-  "WELCOME_PAGE": {
-    "FLAG_TOOLTIP": "Przełącz język",
-    "TITLE": "Plan Ataku",
-    "SUBTITLE": "Opracuj plan realizacji dowolnego celu",
-    "BUTTON_START": "ROZPOCZNIJ",
-    "BUTTON_START_TOOLTIP": "Już wkrótce ..."
+  "PAGES": {
+    "WELCOME": {
+      "FLAG_TOOLTIP": "Przełącz język",
+      "TITLE": "Plan Ataku",
+      "SUBTITLE": "Opracuj plan realizacji dowolnego celu",
+      "BUTTON_START": "ROZPOCZNIJ",
+      "BUTTON_START_TOOLTIP": "Już wkrótce ..."
+    },
+    "PLANS": {
+      "TITLE": "Przegląd planów",
+      "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
+      "CONTENT_WELCOME": "Witaj",
+      "CONTENT_SIGNED_IN": "Więcej pięknych ficzerów wkrótce"
+    }
+  },
+  "FEATURES": {
+    "GOOGLE_AUTH": {
+      "SIGN_IN": "Zaloguj się",
+      "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
+      "SIGN_OUT": "Wyloguj się",
+      "NOTIFICATION_SNAKS": {
+        "INITIALIZATION_ERROR": "Błędna inicjalizacja logowania Google",
+        "OTHER_ERROR": "Błędne logowanie przez Google"
+      }
+    }
   }
 }
