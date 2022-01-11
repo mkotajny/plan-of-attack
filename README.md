@@ -28,7 +28,7 @@ The project contains many parts. Some of them are components, some of them are l
 	</thead>
 	<tbody>
 		<tr>
-			<td style="border: 1px solid">UI libraries</td>
+			<td style="border: 1px solid">Javascript libraries</td>
 			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/144419384-1deb6fde-61f3-48e3-9e5f-d57ac4530028.png" />
 				<br/>
@@ -40,7 +40,7 @@ The project contains many parts. Some of them are components, some of them are l
 			<td style="border: 1px solid">-</td>
 		</tr>
 		<tr>
-			<td style="border: 1px solid">UI libraries</td>
+			<td style="border: 1px solid">Javascript libraries</td>
 			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/147070316-85e9038a-84de-4ff5-b065-ffb6eafe47f2.png" />
 				<br/>
@@ -48,6 +48,18 @@ The project contains many parts. Some of them are components, some of them are l
 			</td>
 			<td style="border: 1px solid">
 				A library of foundational and advanced components, enabling to build own design system and develop React applications faster
+			</td>
+			<td style="border: 1px solid">-</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid">Javascript libraries</td>
+			<td style="border: 1px solid; text-align: center">
+				<img src="https://user-images.githubusercontent.com/33925073/148905881-ee9bea32-eae6-493e-8484-fca24d862324.png" />
+				<br/>
+				<a href="https://redux.js.org/" target="_blank"><b>Redux</b></a>
+			</td>
+			<td style="border: 1px solid">
+				A Predictable State Container for JS Apps
 			</td>
 			<td style="border: 1px solid">-</td>
 		</tr>
@@ -123,15 +135,15 @@ Please be aware, that this project is configured for usage of [yarn](https://yar
 To start the development, run:
 
 ```
-//navigate to the parent folder dedicated for this project
+//navigate to the folder where you want to place this project
 
-// clone plan-of-attack repo
+// clone plan-of-attack repo (this command also will create folder for the project)
 git clone https://github.com/mkotajny/plan-of-attack.git
 
-// install the boilerplate for your new app
+// install the project
 yarn install
 
-//fill the .env file wih proper keys/credentials (contact with mkotajny@gmail.com developer to get these values)
+//fill the .env file wih proper keys/credentials (contact with mkotajny@gmail.com to get these values)
 
 // run the project
 yarn start

@@ -20,9 +20,11 @@
       "SIGN_IN_TOOLTIP": "Sign in via Google account",
       "SIGN_OUT": "Sign out",
       "NOTIFICATION_SNAKS": {
-        "INITIALIZATION_ERROR": "Initialization of Google authentication failed",
         "OTHER_ERROR": "Google authentication failed"
       }
     }
+  },
+  "ROUTING": {
+    "ROUTE_DOESNT_EXISTS": "Page does not exists ..."
   }
 }

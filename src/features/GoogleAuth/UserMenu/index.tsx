@@ -3,6 +3,7 @@ import { Logout } from '@mui/icons-material';
 import { UserMenuPropsType } from './types';
 import { useStyles, menuPaperProps } from './styles';
 import { useTranslation } from 'react-i18next';
+import { auth } from 'firebase/firebase.utils';
 
 const UserMenu = (props: UserMenuPropsType) => {
   const open = Boolean(props.anchorElement);
@@ -22,7 +23,7 @@ const UserMenu = (props: UserMenuPropsType) => {
     >
       <div className={classes.menuTitle}>{props.fullName}</div>
       <Divider />
-      <MenuItem onClick={props.onAuthenticationClick}>
+      <MenuItem onClick={() => auth.signOut()}>
         <ListItemIcon>
           <Logout fontSize='small' />
         </ListItemIcon>

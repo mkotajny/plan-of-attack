@@ -5,7 +5,7 @@ import { Typography, Button } from '@mui/material';
 
 import LanguageSwitcher from 'features/LanguageSwitcher';
 import Logo from '../../assets/images/plan-of-attack-logo.png';
-import AppRouteEnum from 'routing/AppRoute.enum';
+import AppRoutesEnum from 'routing/AppRoute.enum';
 
 const WelcomePage = () => {
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ const WelcomePage = () => {
           color='warning'
           size='large'
           onClick={() => {
-            navigate(AppRouteEnum.plans);
+            navigate(AppRoutesEnum.plans);
           }}
         >
           {t('PAGES.WELCOME.BUTTON_START')}
