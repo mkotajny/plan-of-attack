@@ -1,6 +1,6 @@
-const enum AppRouteEnum {
+enum AppRoutesEnum {
   home = '/',
   plans = '/plans',
 }
 
-export default AppRouteEnum;
+export default AppRoutesEnum;
