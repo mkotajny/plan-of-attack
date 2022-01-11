@@ -20,9 +20,11 @@
       "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
       "SIGN_OUT": "Wyloguj się",
       "NOTIFICATION_SNAKS": {
-        "INITIALIZATION_ERROR": "Błędna inicjalizacja logowania Google",
         "OTHER_ERROR": "Błędne logowanie przez Google"
       }
     }
+  },
+  "ROUTING": {
+    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ..."
   }
 }

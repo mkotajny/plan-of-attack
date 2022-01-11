@@ -12,14 +12,14 @@ const PlansPage = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {currentUser.inProgress && !currentUser.googleInitialized && <CircularProgress />}
+      {currentUser.inProgress && <CircularProgress />}
       {!currentUser.inProgress && !currentUser.signedIn && t('PAGES.PLANS.CONTENT_SIGNED_OUT')}
       {currentUser.signedIn && (
         <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
           <div className={classes.root}>
             <img className={classes.imageWelcome} src={comingSoonImage} />
             <Typography variant='h5'>
-              {t('PAGES.PLANS.CONTENT_WELCOME')} {currentUser.profile.firstName} !
+              {t('PAGES.PLANS.CONTENT_WELCOME')} {currentUser.profile.userName} !
             </Typography>
             {t('PAGES.PLANS.CONTENT_SIGNED_IN')}...
           </div>

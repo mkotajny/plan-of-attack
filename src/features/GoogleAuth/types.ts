@@ -1,12 +1,11 @@
 export type ProfileType = {
-  fullName?: string;
-  firstName?: string;
-  imageUrl?: string;
+  userId: string | undefined;
+  userName: string | undefined;
+  imageUrl: string | undefined;
 };
 
 export type AuthStateType = {
   signedIn: boolean;
   inProgress: boolean;
-  googleInitialized: boolean;
   profile: ProfileType;
 };
