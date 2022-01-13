@@ -5,7 +5,7 @@ import WelcomePage from '../pages/WelcomePage';
 import PlansPage from 'pages/PlansPage';
 import AppRoutesEnum from './AppRoute.enum';
 
-const AppRoutes = () => {
+const AppPageRoutes = () => {
   const { t } = useTranslation();
   return (
     <Routes>
@@ -16,4 +16,4 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+export default AppPageRoutes;
