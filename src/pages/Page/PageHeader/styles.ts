@@ -5,6 +5,6 @@ import { commonColors } from 'common/styles/commonStyles';
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   pageHeaderRoot: {
     backgroundColor: commonColors.pageHeaderBackground,
-    padding: `${theme.spacing(2)} ${theme.spacing(3)}`,
+    padding: `${theme.spacing(2)} ${theme.spacing(3.5)}`,
   },
 }));

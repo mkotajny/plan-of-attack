@@ -24,6 +24,11 @@
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "Nie założono jeszcze żadnego planu 🤷"
+    }
+  },
   "ROUTING": {
     "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ..."
   }

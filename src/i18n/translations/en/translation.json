@@ -24,6 +24,11 @@
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "No plans were created 🤷"
+    }
+  },
   "ROUTING": {
     "ROUTE_DOESNT_EXISTS": "Page does not exists ..."
   }

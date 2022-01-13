@@ -2,8 +2,8 @@ import { Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
 
-import flagPL from '../../assets/countryFlags/flag-pl.png';
-import flagUK from '../../assets/countryFlags/flag-uk.png';
+import flagPL from '../../../assets/countryFlags/flag-pl.png';
+import flagUK from '../../../assets/countryFlags/flag-uk.png';
 
 const LanguageSwitcher = () => {
   const classes = useStyles();
