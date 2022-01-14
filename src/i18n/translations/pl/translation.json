@@ -10,8 +10,7 @@
     "PLANS": {
       "TITLE": "Przegląd planów",
       "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
-      "CONTENT_WELCOME": "Witaj",
-      "CONTENT_SIGNED_IN": "Więcej pięknych ficzerów wkrótce"
+      "CREATE_PLAN": "Załóż nowy plan"
     }
   },
   "FEATURES": {

@@ -3,8 +3,7 @@ import { Theme } from '@mui/material';
 
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   root: {
-    marginTop: theme.spacing(8),
-    textAlign: 'center',
+    marginTop: theme.spacing(4),
   },
   imageWelcome: {
     marginBottom: theme.spacing(3),

@@ -1,4 +1,3 @@
-import { Fade } from '@mui/material';
 import { selectCurrentUser } from 'features/GoogleAuth/authSlice';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
@@ -14,13 +13,7 @@ const PlansPage = () => {
   return (
     <div className={classes.root}>
       {!currentUser.inProgress && !currentUser.signedIn && t('PAGES.PLANS.CONTENT_SIGNED_OUT')}
-      {currentUser.signedIn && (
-        <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
-          <div>
-            <PlansList />
-          </div>
-        </Fade>
-      )}
+      {currentUser.signedIn && <PlansList />}
     </div>
   );
 };
