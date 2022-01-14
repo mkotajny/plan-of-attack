@@ -3,7 +3,7 @@ import { Theme } from '@mui/material';
 import { commonColors } from 'common/styles/commonStyles';
 
 export const sxStyles = {
-  emptyListImage: {
+  bigIcon: {
     fontSize: 128,
     color: commonColors.bigIcon,
   },

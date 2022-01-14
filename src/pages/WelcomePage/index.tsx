@@ -12,7 +12,7 @@ const WelcomePage = () => {
   let navigate = useNavigate();
   const classes = useStyles();
   return (
-    <div className={classes.rootMarek}>
+    <div className={classes.rootWelcomePage}>
       <LanguageSwitcher />
       <img src={Logo} className={classes.logo} alt='logo' loading='lazy' />
       <Typography variant='h4'>

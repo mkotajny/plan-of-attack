@@ -6,8 +6,10 @@ import TopBar from 'pages/Page/TopBar';
 import PageHeader from './PageHeader';
 import AppPageRoutes from 'routing/AppRoutes';
 import AppRoutesEnum from 'routing/AppRoute.enum';
+import { useStyles } from './styles';
 
 const Page = () => {
+  const classes = useStyles();
   const homePage = useLocation().pathname === AppRoutesEnum.home;
   return (
     <>
@@ -17,7 +19,7 @@ const Page = () => {
         <>
           {!homePage && <TopBar />}
           {!homePage && <PageHeader />}
-          <Container maxWidth={false}>
+          <Container className={classes.pageRoot} maxWidth={false}>
             <AppPageRoutes />
           </Container>
         </>

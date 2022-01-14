@@ -12,7 +12,7 @@ const PageHeader = () => {
 
   return (
     <Typography className={classes.pageHeaderRoot} variant='h6'>
-      {routeExists(pathName) ? t(`PAGES.${titleKey}.TITLE`) : ''}
+      {routeExists(pathName) ? t(`PAGES.${titleKey}.TITLE`) : '🤷'}
     </Typography>
   );
 };

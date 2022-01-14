@@ -9,7 +9,6 @@
     },
     "PLANS": {
       "TITLE": "Przegląd planów",
-      "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
       "CREATE_PLAN": "Załóż nowy plan"
     }
   },
@@ -29,6 +28,7 @@
     }
   },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ..."
+    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ...",
+    "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ..."
   }
 }

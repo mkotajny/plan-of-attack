@@ -9,7 +9,6 @@
     },
     "PLANS": {
       "TITLE": "Plans Review",
-      "CONTENT_SIGNED_OUT": "Sign in to see more ...",
       "CREATE_PLAN": "Create a new plan"
     }
   },
@@ -29,6 +28,7 @@
     }
   },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Page does not exists ..."
+    "ROUTE_DOESNT_EXISTS": "Page does not exists ...",
+    "CONTENT_SIGNED_OUT": "Sign in to see more ..."
   }
 }

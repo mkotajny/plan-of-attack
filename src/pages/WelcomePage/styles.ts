@@ -3,7 +3,7 @@ import { Theme } from '@mui/material';
 import { commonColors } from 'common/styles/commonStyles';
 
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
-  rootMarek: {
+  rootWelcomePage: {
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',

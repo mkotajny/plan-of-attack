@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Fab, Typography, Zoom, Slide, Fade } from '@mui/material';
+import { Fab, Typography, Zoom, Slide } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import NoContent from 'components/shared/NoContent';
+import { BigIconInfo, BigIconInfoTypesEnum } from 'components/shared/BigIconInfo';
 import { useStyles } from './styles';
 import { useTranslation } from 'react-i18next';
 
@@ -13,13 +13,13 @@ const PlansList = () => {
   useEffect(() => {
     setTimeout(() => {
       setSlideDelay(true);
-    }, 500);
+    }, 1200);
   }, []);
 
   return (
     <div className={classes.rootPlansList}>
       <div className={classes.createPlan}>
-        <Zoom in={true} style={{ transitionDelay: `800ms` }}>
+        <Zoom in={true} style={{ transitionDelay: `1500ms` }}>
           <Fab size='small' color='primary' aria-label='add'>
             <AddIcon />
           </Fab>
@@ -30,11 +30,9 @@ const PlansList = () => {
           </div>
         </Slide>
       </div>
-      <Fade in={true} timeout={1000}>
-        <div className={classes.listContainer}>
-          <NoContent messageKey='COMPONENTS.NO_CONTENT.MESSAGE' />
-        </div>
-      </Fade>
+      <div className={classes.listContainer}>
+        <BigIconInfo messageKey='COMPONENTS.NO_CONTENT.MESSAGE' messageType={BigIconInfoTypesEnum.NoItems} />
+      </div>
     </div>
   );
 };
