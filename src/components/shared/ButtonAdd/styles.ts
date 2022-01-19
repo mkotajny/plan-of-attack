@@ -2,15 +2,11 @@ import { makeStyles } from '@mui/styles';
 import { Theme } from '@mui/material';
 
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
-  createPlan: {
+  buttonAddRoot: {
     display: 'flex',
     alignItems: 'center',
   },
-  createPlanMessage: {
+  addLabel: {
     marginLeft: theme.spacing(1),
-  },
-  listContainer: {
-    marginTop: theme.spacing(6),
-    textAlign: 'center',
   },
 }));

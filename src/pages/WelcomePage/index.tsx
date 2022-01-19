@@ -3,7 +3,7 @@ import { useStyles } from './styles';
 import { useNavigate } from 'react-router-dom';
 import { Typography, Button } from '@mui/material';
 
-import LanguageSwitcher from 'components/nonShared/LanguageSwitcher';
+import LanguageSwitcher from 'features/LanguageSwitcher';
 import Logo from '../../assets/images/plan-of-attack-logo.png';
 import AppRoutesEnum from 'routing/AppRoute.enum';
 

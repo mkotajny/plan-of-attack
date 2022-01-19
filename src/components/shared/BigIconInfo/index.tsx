@@ -1,11 +1,11 @@
 import { Typography, Fade } from '@mui/material';
 import { StatusIconPropsType } from './types';
 import { useTranslation } from 'react-i18next';
+import { sxStyles } from './styles';
+import { useStyles } from './styles';
 import WebAssetOffIcon from '@mui/icons-material/WebAssetOff';
 import AppBlockingIcon from '@mui/icons-material/AppBlocking';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import { sxStyles } from './styles';
-import { useStyles } from './styles';
 
 export enum BigIconInfoTypesEnum {
   NoItems,
@@ -27,7 +27,7 @@ export const BigIconInfo = ({ messageKey, messageType }: StatusIconPropsType) =>
       case BigIconInfoTypesEnum.NonExistingRoute:
         return <QuestionMarkIcon sx={sxStyle} />;
       default:
-        return <div />;
+        return null;
     }
   };
 

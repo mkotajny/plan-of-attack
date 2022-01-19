@@ -3,6 +3,6 @@ import { Theme } from '@mui/material';
 
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   pageRoot: {
-    marginTop: theme.spacing(4),
+    paddingTop: theme.spacing(4),
   },
 }));
