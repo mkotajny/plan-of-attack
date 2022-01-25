@@ -29,6 +29,10 @@
         "CREATE_PLAN": "Create a new plan",
         "PLAN_TITLE_LABEL": "Title of the plan",
         "PLAN_TITLE_PLANCEHOLDER": "Enter the title"
+      },
+      "SNACKBAR": {
+        "PLAN_ADDED": "The new plan has been added",
+        "PLAN_ADD_ERROR": "Adding a new plan ended with an error"
       }
     }
   },
@@ -40,5 +44,8 @@
   "ROUTING": {
     "ROUTE_DOESNT_EXISTS": "Page does not exists ...",
     "CONTENT_SIGNED_OUT": "Sign in to see more ..."
+  },
+  "VALIDATION": {
+    "FIELD_REQUIRED": "Required"
   }
 }
