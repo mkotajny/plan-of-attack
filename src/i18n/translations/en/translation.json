@@ -11,8 +11,8 @@
       "BUTTON_START": "Start",
       "BUTTON_START_TOOLTIP": "Coming soon ..."
     },
-    "PLANS": {
-      "TITLE": "Plans Review"
+    "MYPLANS": {
+      "TITLE": "My Plans"
     }
   },
   "FEATURES": {

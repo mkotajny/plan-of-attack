@@ -1,10 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from '../features/GoogleAuth/authSlice';
+import authReducer from '../features/GoogleAuth/slice';
+import plansReducer from '../features/Plans/slice';
+import { poaApi } from 'api/api';
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
+    plans: plansReducer,
+    [poaApi.reducerPath]: poaApi.reducer,
   },
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(poaApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

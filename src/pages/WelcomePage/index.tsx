@@ -27,7 +27,7 @@ const WelcomePage = () => {
           color='warning'
           size='large'
           onClick={() => {
-            navigate(AppRoutesEnum.plans);
+            navigate(AppRoutesEnum.myPlans);
           }}
         >
           {t('PAGES.WELCOME.BUTTON_START')}

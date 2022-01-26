@@ -1,6 +1,6 @@
 enum AppRoutesEnum {
   home = '/',
-  plans = '/plans',
+  myPlans = '/myplans',
 }
 
 export default AppRoutesEnum;

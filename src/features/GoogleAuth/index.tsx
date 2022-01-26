@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, CircularProgress, Avatar, Tooltip } from '@mui/material';
 import { Google, ExpandMore } from '@mui/icons-material';
 import { useSnackbar } from 'notistack';
-import { selectCurrentUser, signIn, signOut, setInProgress } from './authSlice';
+import { selectCurrentUser, signIn, signOut, setInProgress } from './slice';
 import { auth, signInWithGoogle } from 'firebase/firebase.utils';
 import UserMenu from './UserMenu';
 import { useStyles } from './styles';

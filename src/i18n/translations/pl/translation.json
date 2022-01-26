@@ -11,8 +11,8 @@
       "BUTTON_START": "ROZPOCZNIJ",
       "BUTTON_START_TOOLTIP": "Już wkrótce ..."
     },
-    "PLANS": {
-      "TITLE": "Przegląd planów"
+    "MYPLANS": {
+      "TITLE": "Moje Plany"
     }
   },
   "FEATURES": {

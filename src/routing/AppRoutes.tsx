@@ -9,7 +9,7 @@ const AppPageRoutes = () => {
   return (
     <Routes>
       <Route path={AppRoutesEnum.home} element={<WelcomePage />} />
-      <Route path={AppRoutesEnum.plans} element={<AuthorizedPage page={<PlansPage />} />} />
+      <Route path={AppRoutesEnum.myPlans} element={<AuthorizedPage page={<PlansPage />} />} />
       <Route
         path='*'
         element={

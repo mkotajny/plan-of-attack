@@ -7,13 +7,14 @@ import { useTranslation } from 'react-i18next';
 import { useStyles } from './styles';
 import { useSnackbar } from 'notistack';
 import { validatePlansForm } from './validation';
+import { useAddPlanMutation } from 'api/api';
 
 const PlansForm = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   const [inputMode, setInputMode] = useState(false);
-  const [inProgress, setInProgress] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
+  const [addPlan, { isLoading: inProgress }] = useAddPlanMutation();
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Escape') {
@@ -26,33 +27,16 @@ const PlansForm = () => {
   };
 
   const onSubmit = (values: { title: string }) => {
-    setInProgress(true);
-    fetch(
-      `https://firestore.googleapis.com/v1/projects/${
-        process.env.REACT_APP_FIREBASE_PROJECT_ID || ''
-      }/databases/(default)/documents/plans`,
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          name: '',
-          fields: {
-            title: {
-              stringValue: values.title,
-            },
-            userId: {
-              stringValue: 'koszmarrek',
-            },
-          },
-        }),
-      }
-    )
+    addPlan({
+      authorId: 'koszmarrrek',
+      title: values.title,
+    })
+      .unwrap()
       .then(() => {
-        setInProgress(false);
         setInputMode(false);
         enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADDED'), { variant: 'success' });
       })
       .catch(() => {
-        setInProgress(false);
         enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADD_ERROR'), { variant: 'error' });
       });
   };
@@ -80,6 +64,7 @@ const PlansForm = () => {
                   margin='none'
                   // required
                   multiline
+                  disabled={inProgress}
                 />
                 <div className={classes.buttonsContainer}>
                   <div className={classes.buttonAdd}>
