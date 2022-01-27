@@ -1,4 +1,4 @@
-import { randomIntFromRange } from '../../../common/utils/utils';
+import { randomIntFromRange } from '../../../common/utils';
 import BattlePlanImage from '../../../assets/images/backgrounds/battle-plan.jpg';
 import FootballBoardImage from '../../../assets/images/backgrounds/football-board.jpg';
 import WarPlanesImage from '../../../assets/images/backgrounds/war-planes.jpg';

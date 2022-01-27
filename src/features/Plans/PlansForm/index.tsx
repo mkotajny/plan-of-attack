@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import { Button, Fade, CircularProgress } from '@mui/material';
 import { Form } from 'react-final-form';
 import { TextField } from 'mui-rff';
-import ButtonAdd from 'components/shared/ButtonAdd';
+import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useStyles } from './styles';
 import { useSnackbar } from 'notistack';
 import { validatePlansForm } from './validation';
-import { useAddPlanMutation } from 'api/api';
+import { addPlanThunk, selectPlans } from '../slice';
+import ButtonAdd from 'components/shared/ButtonAdd';
+import { useStyles } from './styles';
 
 const PlansForm = () => {
   const classes = useStyles();
   const { t } = useTranslation();
-  const [inputMode, setInputMode] = useState(false);
+  const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const [addPlan, { isLoading: inProgress }] = useAddPlanMutation();
+  const plans = useSelector(selectPlans);
+  const [inputMode, setInputMode] = useState(false);
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Escape') {
@@ -22,29 +24,25 @@ const PlansForm = () => {
     }
   };
 
-  const toggleInputMode = () => {
-    setInputMode(prevState => !prevState);
-  };
-
-  const onSubmit = (values: { title: string }) => {
-    addPlan({
-      authorId: 'koszmarrrek',
-      title: values.title,
-    })
-      .unwrap()
-      .then(() => {
-        setInputMode(false);
-        enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADDED'), { variant: 'success' });
-      })
-      .catch(() => {
-        enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADD_ERROR'), { variant: 'error' });
-      });
+  const onSubmit = async (values: { title: string }) => {
+    try {
+      await dispatch(
+        addPlanThunk({
+          authorId: 'koszmarrrek',
+          title: values.title,
+        })
+      );
+      enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADDED'), { variant: 'success' });
+      setInputMode(false);
+    } catch {
+      enqueueSnackbar(t('FEATURES.PLANS.SNACKBAR.PLAN_ADD_ERROR'), { variant: 'error' });
+    }
   };
 
   if (!inputMode) {
     return (
       <div className={classes.plansFormRoot}>
-        <ButtonAdd labelTranslationKey='FEATURES.PLANS.PLANS_FORM.CREATE_PLAN' onClick={toggleInputMode} />
+        <ButtonAdd labelTranslationKey='FEATURES.PLANS.PLANS_FORM.CREATE_PLAN' onClick={() => setInputMode(true)} />
       </div>
     );
   }
@@ -62,20 +60,21 @@ const PlansForm = () => {
                   label={t('FEATURES.PLANS.PLANS_FORM.PLAN_TITLE_LABEL')}
                   name='title'
                   margin='none'
-                  // required
                   multiline
-                  disabled={inProgress}
+                  disabled={plans.apiRequestInProgress}
+                  autoFocus
+                  // required
                 />
                 <div className={classes.buttonsContainer}>
                   <div className={classes.buttonAdd}>
-                    {!inProgress && (
+                    {!plans.apiRequestInProgress && (
                       <Button variant='contained' type='submit' disabled={submitting || pristine}>
                         {t('COMMON.CONFIRM')}
                       </Button>
                     )}
-                    {inProgress && <CircularProgress />}
+                    {plans.apiRequestInProgress && <CircularProgress />}
                   </div>
-                  <Button variant='outlined' onClick={toggleInputMode} disabled={inProgress}>
+                  <Button variant='outlined' onClick={() => setInputMode(false)} /*disabled={inProgress}*/>
                     {t('COMMON.CANCEL')}
                   </Button>
                 </div>

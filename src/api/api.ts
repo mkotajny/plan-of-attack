@@ -15,7 +15,7 @@ export const poaApi = createApi({
     getPlanById: builder.query<PlanType, void>({
       query: planId => `plans/${planId}`,
     }),
-    addPlan: builder.mutation<PlanType, Partial<PlanType>>({
+    addPlanRequest: builder.mutation<PlanType, Partial<PlanType>>({
       query: body => ({
         url: `plans`,
         method: 'POST',
@@ -30,4 +30,4 @@ export const poaApi = createApi({
 
 // Export hooks for usage in function components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPlanByIdQuery, useAddPlanMutation } = poaApi;
+export const { useGetPlanByIdQuery, useAddPlanRequestMutation } = poaApi;

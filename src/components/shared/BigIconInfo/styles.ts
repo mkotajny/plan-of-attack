@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import { Theme } from '@mui/material';
-import { commonColors } from 'common/styles/commonStyles';
+import { commonColors } from 'common/commonStyles';
 
 export const sxStyles = {
   bigIcon: {

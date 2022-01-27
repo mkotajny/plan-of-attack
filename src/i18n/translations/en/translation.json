@@ -21,7 +21,8 @@
       "SIGN_IN_TOOLTIP": "Sign in via Google account",
       "SIGN_OUT": "Sign out",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Google authentication failed"
+        "ERROR_HEADER": "Google authentication failed",
+        "INTERRUPTED_BY_USER": "the process interrupted by the user"
       }
     },
     "PLANS": {

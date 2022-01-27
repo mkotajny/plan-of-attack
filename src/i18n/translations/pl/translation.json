@@ -21,7 +21,8 @@
       "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
       "SIGN_OUT": "Wyloguj się",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Błędne logowanie przez Google"
+        "ERROR_HEADER": "Błędne logowanie przez Google",
+        "INTERRUPTED_BY_USER": "proces przerwany przez użytkownika"
       }
     },
     "PLANS": {

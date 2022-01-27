@@ -4,5 +4,6 @@ export type PlanType = {
 };
 
 export type PlansStateType = {
+  apiRequestInProgress: boolean;
   plans: PlanType[];
 };
