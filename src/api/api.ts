@@ -1,15 +1,21 @@
-// Need to use the React-specific entry point to allow generating React hooks
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { PlanType } from '../features/Plans/types';
 import { firebaseRequestsBody } from 'firebase/firebase.utils';
+import { RootState } from 'redux/store';
 
-// Define a service using a base URL and expected endpoints
 export const poaApi = createApi({
   reducerPath: 'poaApi',
   baseQuery: fetchBaseQuery({
     baseUrl: `https://firestore.googleapis.com/v1/projects/${
       process.env.REACT_APP_FIREBASE_PROJECT_ID || ''
     }/databases/(default)/documents/`,
+    prepareHeaders: (headers, { getState }) => {
+      const token = (getState() as RootState).auth.profile.token;
+      if ((getState() as RootState).auth.profile.token) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
   }),
   endpoints: builder => ({
     getPlanById: builder.query<PlanType, void>({
@@ -17,7 +23,7 @@ export const poaApi = createApi({
     }),
     addPlanRequest: builder.mutation<PlanType, Partial<PlanType>>({
       query: body => ({
-        url: `plans`,
+        url: `planOwners/${body.authorId}/plans`,
         method: 'POST',
         body: {
           name: '',
@@ -28,6 +34,4 @@ export const poaApi = createApi({
   }),
 });
 
-// Export hooks for usage in function components, which are
-// auto-generated based on the defined endpoints
 export const { useGetPlanByIdQuery, useAddPlanRequestMutation } = poaApi;

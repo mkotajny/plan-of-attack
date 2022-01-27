@@ -1,5 +1,5 @@
 export type PlanType = {
-  authorId: string;
+  authorId: string | undefined;
   title: string;
 };
 

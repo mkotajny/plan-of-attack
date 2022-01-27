@@ -10,6 +10,7 @@ const initialState: AuthStateType = {
     userId: undefined,
     userName: undefined,
     imageUrl: undefined,
+    token: undefined,
   },
 };
 
@@ -49,14 +50,21 @@ export const signInThunk = () => async (dispatch: AppDispatch) => {
 
 export const toggleAuthSubscribtionThunk = (isCancelled: boolean) => async (dispatch: AppDispatch) => {
   dispatch(setInProgress(true));
-  const toggleAuthSubscribtion = auth.onAuthStateChanged(user => {
+  const toggleAuthSubscribtion = auth.onAuthStateChanged(async user => {
     if (!isCancelled) {
+      let token = '';
+      if (user) {
+        await user.getIdToken().then(response => {
+          token = response;
+        });
+      }
       user
         ? dispatch(
             signIn({
               userId: user.uid ? user.uid : undefined,
               userName: user.displayName ? user.displayName : undefined,
               imageUrl: user.photoURL ? user.photoURL : undefined,
+              token,
             })
           )
         : dispatch(signOut());

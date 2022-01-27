@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Fade, CircularProgress } from '@mui/material';
 import { Form } from 'react-final-form';
-import { TextField } from 'mui-rff';
+import TextFieldPowered from 'components/shared/TextFieldPowered';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useSnackbar } from 'notistack';
 import { validatePlansForm } from './validation';
 import { addPlanThunk, selectPlans } from '../slice';
+import { selectCurrentUser } from 'features/GoogleAuth/slice';
 import ButtonAdd from 'components/shared/ButtonAdd';
 import { useStyles } from './styles';
 
@@ -16,6 +17,7 @@ const PlansForm = () => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const plans = useSelector(selectPlans);
+  const currentUser = useSelector(selectCurrentUser);
   const [inputMode, setInputMode] = useState(false);
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -28,7 +30,7 @@ const PlansForm = () => {
     try {
       await dispatch(
         addPlanThunk({
-          authorId: 'koszmarrrek',
+          authorId: currentUser.profile.userId,
           title: values.title,
         })
       );
@@ -56,13 +58,14 @@ const PlansForm = () => {
           render={({ handleSubmit, submitting, pristine /*,form, values*/ }) => (
             <form onSubmit={handleSubmit}>
               <div className={classes.plansFormRoot} onKeyDown={keyDownHandler}>
-                <TextField
+                <TextFieldPowered
                   label={t('FEATURES.PLANS.PLANS_FORM.PLAN_TITLE_LABEL')}
                   name='title'
                   margin='none'
                   multiline
                   disabled={plans.apiRequestInProgress}
                   autoFocus
+                  inputProps={{ maxLength: 100 }}
                   // required
                 />
                 <div className={classes.buttonsContainer}>
