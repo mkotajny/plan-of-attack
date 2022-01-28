@@ -16,7 +16,7 @@ const PlansForm = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
-  const plans = useSelector(selectPlans);
+  const plansState = useSelector(selectPlans);
   const currentUser = useSelector(selectCurrentUser);
   const [inputMode, setInputMode] = useState(false);
 
@@ -54,7 +54,7 @@ const PlansForm = () => {
       <div>
         <Form
           onSubmit={onSubmit}
-          validate={values => validatePlansForm(values, t)}
+          validate={values => validatePlansForm(values, plansState.plans, t)}
           render={({ handleSubmit, submitting, pristine /*,form, values*/ }) => (
             <form onSubmit={handleSubmit}>
               <div className={classes.plansFormRoot} onKeyDown={keyDownHandler}>
@@ -63,19 +63,19 @@ const PlansForm = () => {
                   name='title'
                   margin='none'
                   multiline
-                  disabled={plans.apiRequestInProgress}
+                  disabled={plansState.apiRequestInProgress}
                   autoFocus
                   inputProps={{ maxLength: 100 }}
                   // required
                 />
                 <div className={classes.buttonsContainer}>
                   <div className={classes.buttonAdd}>
-                    {!plans.apiRequestInProgress && (
+                    {!plansState.apiRequestInProgress && (
                       <Button variant='contained' type='submit' disabled={submitting || pristine}>
                         {t('COMMON.CONFIRM')}
                       </Button>
                     )}
-                    {plans.apiRequestInProgress && <CircularProgress />}
+                    {plansState.apiRequestInProgress && <CircularProgress />}
                   </div>
                   <Button variant='outlined' onClick={() => setInputMode(false)} /*disabled={inProgress}*/>
                     {t('COMMON.CANCEL')}

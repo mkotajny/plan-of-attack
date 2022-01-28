@@ -11,8 +11,6 @@ const TextFieldPowered = (originalProps: TextFieldProps) => {
     setTextLength(event.target.value.length);
   };
 
-  console.log(maxLength);
-
   return (
     <TextField
       {...originalProps}

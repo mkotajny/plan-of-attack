@@ -16,10 +16,7 @@ export const plansSlice = createSlice({
       state.apiRequestInProgress = action.payload;
     },
     addPlan: (state, action: PayloadAction<PlanType>) => {
-      const existingDuplicate = state.plans.find(item => item.title === action.payload.title);
-      if (!existingDuplicate) {
-        state.plans.push(action.payload);
-      }
+      state.plans.push(action.payload);
       state.apiRequestInProgress = false;
     },
   },

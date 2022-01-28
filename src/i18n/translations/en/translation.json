@@ -29,7 +29,10 @@
       "PLANS_FORM": {
         "CREATE_PLAN": "Create a new plan",
         "PLAN_TITLE_LABEL": "Title of the plan",
-        "PLAN_TITLE_PLANCEHOLDER": "Enter the title"
+        "PLAN_TITLE_PLANCEHOLDER": "Enter the title",
+        "VALIDATION": {
+          "PLAN_TITLE_DUPLICATE": "You've already created a plan with this title"
+        }
       },
       "SNACKBAR": {
         "PLAN_ADDED": "The new plan has been added",
