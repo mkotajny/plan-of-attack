@@ -1,4 +1,8 @@
 {
+  "COMMON": {
+    "CONFIRM": "Potwierdź",
+    "CANCEL": "Anuluj"
+  },
   "PAGES": {
     "WELCOME": {
       "FLAG_TOOLTIP": "Przełącz język",
@@ -7,11 +11,8 @@
       "BUTTON_START": "ROZPOCZNIJ",
       "BUTTON_START_TOOLTIP": "Już wkrótce ..."
     },
-    "PLANS": {
-      "TITLE": "Przegląd planów",
-      "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
-      "CONTENT_WELCOME": "Witaj",
-      "CONTENT_SIGNED_IN": "Więcej pięknych ficzerów wkrótce"
+    "MYPLANS": {
+      "TITLE": "Moje Plany"
     }
   },
   "FEATURES": {
@@ -20,11 +21,35 @@
       "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
       "SIGN_OUT": "Wyloguj się",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Błędne logowanie przez Google"
+        "ERROR_HEADER": "Błędne logowanie przez Google",
+        "INTERRUPTED_BY_USER": "proces przerwany przez użytkownika"
+      }
+    },
+    "PLANS": {
+      "PLANS_FORM": {
+        "CREATE_PLAN": "Załóż nowy plan",
+        "PLAN_TITLE_LABEL": "Tytuł planu",
+        "PLAN_TITLE_PLANCEHOLDER": "Podaj tytuł",
+        "VALIDATION": {
+          "PLAN_TITLE_DUPLICATE": "Już utworzyłeś plan o tym tytule"
+        }
+      },
+      "SNACKBAR": {
+        "PLAN_ADDED": "Nowy plan został dodany",
+        "PLAN_ADD_ERROR": "Dodanie nowego planu zakończyło się błędem"
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "Nie założono jeszcze żadnego planu 🤷"
+    }
+  },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ..."
+    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ...",
+    "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ..."
+  },
+  "VALIDATION": {
+    "FIELD_REQUIRED": "Wymagane"
   }
 }

@@ -1,4 +1,8 @@
 {
+  "COMMON": {
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel"
+  },
   "PAGES": {
     "WELCOME": {
       "FLAG_TOOLTIP": "Switch language",
@@ -7,11 +11,8 @@
       "BUTTON_START": "Start",
       "BUTTON_START_TOOLTIP": "Coming soon ..."
     },
-    "PLANS": {
-      "TITLE": "Plans Review",
-      "CONTENT_SIGNED_OUT": "Sign in to see more ...",
-      "CONTENT_WELCOME": "Welcome",
-      "CONTENT_SIGNED_IN": "More of beautiful features coming soon"
+    "MYPLANS": {
+      "TITLE": "My Plans"
     }
   },
   "FEATURES": {
@@ -20,11 +21,35 @@
       "SIGN_IN_TOOLTIP": "Sign in via Google account",
       "SIGN_OUT": "Sign out",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Google authentication failed"
+        "ERROR_HEADER": "Google authentication failed",
+        "INTERRUPTED_BY_USER": "the process interrupted by the user"
+      }
+    },
+    "PLANS": {
+      "PLANS_FORM": {
+        "CREATE_PLAN": "Create a new plan",
+        "PLAN_TITLE_LABEL": "Title of the plan",
+        "PLAN_TITLE_PLANCEHOLDER": "Enter the title",
+        "VALIDATION": {
+          "PLAN_TITLE_DUPLICATE": "You've already created a plan with this title"
+        }
+      },
+      "SNACKBAR": {
+        "PLAN_ADDED": "The new plan has been added",
+        "PLAN_ADD_ERROR": "Adding a new plan ended with an error"
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "No plans were created 🤷"
+    }
+  },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Page does not exists ..."
+    "ROUTE_DOESNT_EXISTS": "Page does not exists ...",
+    "CONTENT_SIGNED_OUT": "Sign in to see more ..."
+  },
+  "VALIDATION": {
+    "FIELD_REQUIRED": "Required"
   }
 }

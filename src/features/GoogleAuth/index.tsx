@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, CircularProgress, Avatar, Tooltip } from '@mui/material';
 import { Google, ExpandMore } from '@mui/icons-material';
 import { useSnackbar } from 'notistack';
-import { selectCurrentUser, signIn, signOut, setInProgress } from './authSlice';
-import { auth, signInWithGoogle } from 'firebase/firebase.utils';
+import { selectCurrentUser, signInThunk, toggleAuthSubscribtionThunk } from './slice';
 import UserMenu from './UserMenu';
+import { getErrorMessage } from './utils';
 import { useStyles } from './styles';
 
 const GoogleAuth = () => {
@@ -18,35 +18,20 @@ const GoogleAuth = () => {
   const currentUser = useSelector(selectCurrentUser);
   const divRef = useRef<HTMLDivElement>(null);
 
-  const onSignInClick = () => {
-    dispatch(setInProgress(true));
-    signInWithGoogle().catch(error => {
-      dispatch(setInProgress(false));
-      enqueueSnackbar(`${t('FEATURES.GOOGLE_AUTH.NOTIFICATION_SNAKS.OTHER_ERROR')}: "${error}"`, {
-        variant: 'error',
-      });
-    });
+  const onSignInClick = async () => {
+    try {
+      await dispatch(signInThunk());
+    } catch (error: unknown) {
+      enqueueSnackbar(getErrorMessage(t, error), { variant: 'error' });
+    }
   };
 
   useEffect(() => {
-    dispatch(setInProgress(true));
     let isCancelled = false;
-    const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      if (!isCancelled) {
-        user
-          ? dispatch(
-              signIn({
-                userId: user.uid ? user.uid : undefined,
-                userName: user.displayName ? user.displayName : undefined,
-                imageUrl: user.photoURL ? user.photoURL : undefined,
-              })
-            )
-          : dispatch(signOut());
-      }
-    });
+    dispatch(toggleAuthSubscribtionThunk(isCancelled));
     return () => {
       isCancelled = true;
-      unsubscribeFromAuth();
+      dispatch(toggleAuthSubscribtionThunk(isCancelled));
     };
   }, []);
 
@@ -67,7 +52,7 @@ const GoogleAuth = () => {
       )}
       {!currentUser.profile.userName && (
         <Tooltip title={t('FEATURES.GOOGLE_AUTH.SIGN_IN_TOOLTIP') || ''}>
-          <Button color='inherit' startIcon={currentUser.signedIn ? undefined : <Google />} onClick={onSignInClick}>
+          <Button color='inherit' startIcon={<Google />} onClick={onSignInClick}>
             {t('FEATURES.GOOGLE_AUTH.SIGN_IN')}
           </Button>
         </Tooltip>

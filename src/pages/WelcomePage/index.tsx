@@ -12,7 +12,7 @@ const WelcomePage = () => {
   let navigate = useNavigate();
   const classes = useStyles();
   return (
-    <div className={classes.rootMarek}>
+    <div className={classes.rootWelcomePage}>
       <LanguageSwitcher />
       <img src={Logo} className={classes.logo} alt='logo' loading='lazy' />
       <Typography variant='h4'>
@@ -27,7 +27,7 @@ const WelcomePage = () => {
           color='warning'
           size='large'
           onClick={() => {
-            navigate(AppRoutesEnum.plans);
+            navigate(AppRoutesEnum.myPlans);
           }}
         >
           {t('PAGES.WELCOME.BUTTON_START')}
