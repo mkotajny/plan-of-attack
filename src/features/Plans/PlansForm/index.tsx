@@ -69,7 +69,7 @@ const PlansForm = () => {
                   // required
                 />
                 <div className={classes.buttonsContainer}>
-                  <div className={classes.buttonAdd}>
+                  <div className={classes.formButton}>
                     {!plansState.apiRequestInProgress && (
                       <Button variant='contained' type='submit' disabled={submitting || pristine}>
                         {t('COMMON.CONFIRM')}
@@ -77,9 +77,15 @@ const PlansForm = () => {
                     )}
                     {plansState.apiRequestInProgress && <CircularProgress />}
                   </div>
-                  <Button variant='outlined' onClick={() => setInputMode(false)} /*disabled={inProgress}*/>
-                    {t('COMMON.CANCEL')}
-                  </Button>
+                  <div className={classes.formButton}>
+                    <Button
+                      variant='outlined'
+                      onClick={() => setInputMode(false)}
+                      disabled={plansState.apiRequestInProgress}
+                    >
+                      {t('COMMON.CANCEL')}
+                    </Button>
+                  </div>
                 </div>
               </div>
             </form>

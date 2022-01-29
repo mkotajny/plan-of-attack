@@ -26,6 +26,11 @@
       }
     },
     "PLANS": {
+      "PLANS_LIST": {
+        "SNACKBAR": {
+          "ERROR_FETCH_PLANS": "Failed to download plans"
+        }
+      },
       "PLANS_FORM": {
         "CREATE_PLAN": "Create a new plan",
         "PLAN_TITLE_LABEL": "Title of the plan",
