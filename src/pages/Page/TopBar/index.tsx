@@ -9,9 +9,9 @@ const TopBar = () => {
   const { t } = useTranslation();
   return (
     <Box className={classes.topBar} sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar position='fixed'>
         <Toolbar>
-          <img src={Logo} className={classes.logo} alt='logo' loading='lazy' />
+          <img src={Logo} className={classes.logo} alt='logo' />
           <Typography variant='h5' component='div' sx={{ flexGrow: 1 }}>
             {t(`PAGES.WELCOME.TITLE`)}
           </Typography>

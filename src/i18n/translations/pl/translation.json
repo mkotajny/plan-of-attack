@@ -26,6 +26,11 @@
       }
     },
     "PLANS": {
+      "PLANS_LIST": {
+        "SNACKBAR": {
+          "ERROR_FETCH_PLANS": "Pobranie planów zakończone niepowodzeniem"
+        }
+      },
       "PLANS_FORM": {
         "CREATE_PLAN": "Załóż nowy plan",
         "PLAN_TITLE_LABEL": "Tytuł planu",

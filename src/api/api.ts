@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { PlanType } from '../features/Plans/types';
 import { firebaseRequestsBody } from 'firebase/firebase.utils';
+import { FirebaseResponseType } from 'firebase/types';
 import { RootState } from 'redux/store';
 
 export const poaApi = createApi({
@@ -18,10 +19,10 @@ export const poaApi = createApi({
     },
   }),
   endpoints: builder => ({
-    getPlanById: builder.query<PlanType, void>({
-      query: planId => `plans/${planId}`,
+    fetchPlans: builder.query<FirebaseResponseType, string>({
+      query: authorId => `planOwners/${authorId}/plans`,
     }),
-    addPlanRequest: builder.mutation<PlanType, Partial<PlanType>>({
+    addPlan: builder.mutation<PlanType, Partial<PlanType>>({
       query: body => ({
         url: `planOwners/${body.authorId}/plans`,
         method: 'POST',
@@ -34,4 +35,4 @@ export const poaApi = createApi({
   }),
 });
 
-export const { useGetPlanByIdQuery, useAddPlanRequestMutation } = poaApi;
+export const { useFetchPlansQuery, useAddPlanMutation } = poaApi;
