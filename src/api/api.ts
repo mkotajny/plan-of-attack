@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PlanType } from '../features/Plans/types';
-import { firebaseRequestsBody } from 'firebase/firebase.utils';
-import { FirebaseResponseType } from 'firebase/types';
-import { RootState } from 'redux/store';
+import { PlanType } from '../features/nonShared/Plans/types';
+import { firebaseRequestsBody } from 'api/firebase/firebase.utils';
+import { FirebaseResponseType } from 'api/firebase/types';
+import { RootState } from 'store';
 
 export const poaApi = createApi({
   reducerPath: 'poaApi',
