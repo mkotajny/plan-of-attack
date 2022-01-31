@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
-import SnackbarCloseButton from 'components/nonShared/SnackbarCloseButton';
+import SnackbarCloseButton from 'features/nonShared/SnackbarCloseButton';
 import muiTheme from 'muiTheme';
-import Page from 'pages/Page';
+import Page from 'routing/pages/Page';
 
 const App = () => {
   return (

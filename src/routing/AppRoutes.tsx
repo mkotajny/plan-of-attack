@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import WelcomePage from '../pages/WelcomePage';
-import PlansPage from 'pages/PlansPage';
-import AuthorizedPage from '../pages/Page/AuthorizedPage';
+import WelcomePage from './pages/WelcomePage';
+import PlansPage from 'routing/pages/PlansPage';
+import AuthorizedPage from './pages/Page/AuthorizedPage';
 import AppRoutesEnum from './AppRoute.enum';
-import { BigIconInfo, BigIconInfoTypesEnum } from '../components/shared/BigIconInfo';
+import { BigIconInfo, BigIconInfoTypesEnum } from '../features/shared/BigIconInfo';
 
 const AppPageRoutes = () => {
   return (

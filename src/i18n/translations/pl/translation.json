@@ -1,7 +1,8 @@
 {
   "COMMON": {
     "CONFIRM": "Potwierdź",
-    "CANCEL": "Anuluj"
+    "CANCEL": "Anuluj",
+    "GENERAL_ERROR": "Operacja zakończyła się błędem"
   },
   "PAGES": {
     "WELCOME": {
@@ -33,6 +34,7 @@
       },
       "PLANS_FORM": {
         "CREATE_PLAN": "Załóż nowy plan",
+        "EDIT_PLAN": "Eduj plan",
         "PLAN_TITLE_LABEL": "Tytuł planu",
         "PLAN_TITLE_PLANCEHOLDER": "Podaj tytuł",
         "VALIDATION": {
@@ -41,7 +43,7 @@
       },
       "SNACKBAR": {
         "PLAN_ADDED": "Nowy plan został dodany",
-        "PLAN_ADD_ERROR": "Dodanie nowego planu zakończyło się błędem"
+        "PLAN_UPDATED": "Plan został zaktualizowany"
       }
     }
   },

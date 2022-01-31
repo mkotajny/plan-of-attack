@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PlanType } from '../features/Plans/types';
-import { firebaseRequestsBody } from 'firebase/firebase.utils';
-import { FirebaseResponseType } from 'firebase/types';
-import { RootState } from 'redux/store';
+import { PlanDocumentType, PlanPatchRequestType } from '../features/nonShared/Plans/types';
+import { firebaseRequestsBody } from 'api/firebase/firebase.utils';
+import { FirebaseFetchResponseType, FirebaseDocumentType } from 'api/firebase/types';
+import { RootState } from 'store';
 
 export const poaApi = createApi({
   reducerPath: 'poaApi',
@@ -19,10 +19,10 @@ export const poaApi = createApi({
     },
   }),
   endpoints: builder => ({
-    fetchPlans: builder.query<FirebaseResponseType, string>({
+    fetchPlans: builder.query<FirebaseFetchResponseType, string>({
       query: authorId => `planOwners/${authorId}/plans`,
     }),
-    addPlan: builder.mutation<PlanType, Partial<PlanType>>({
+    postPlan: builder.mutation<FirebaseDocumentType, Partial<PlanDocumentType>>({
       query: body => ({
         url: `planOwners/${body.authorId}/plans`,
         method: 'POST',
@@ -32,7 +32,17 @@ export const poaApi = createApi({
         },
       }),
     }),
+    patchPlan: builder.mutation<FirebaseDocumentType, Partial<PlanPatchRequestType>>({
+      query: body => ({
+        url: `planOwners/${body.authorId}/plans/${body.id}`,
+        method: 'PATCH',
+        body: {
+          name: '',
+          fields: firebaseRequestsBody({ authorId: body.authorId, title: body.title }),
+        },
+      }),
+    }),
   }),
 });
 
-export const { useFetchPlansQuery, useAddPlanMutation } = poaApi;
+export const { useFetchPlansQuery, usePostPlanMutation, usePatchPlanMutation } = poaApi;
