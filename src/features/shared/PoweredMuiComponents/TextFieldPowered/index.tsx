@@ -15,7 +15,7 @@ const TextFieldPowered = (originalProps: TextFieldProps) => {
     <TextField
       {...originalProps}
       onChangeCapture={onChangeHandler}
-      helperText={maxLength ? `${textLength}/${maxLength}` : undefined}
+      helperText={maxLength && textLength > 0 ? `${textLength}/${maxLength}` : undefined}
     />
   );
 };

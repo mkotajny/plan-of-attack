@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import { FirebaseResponseType } from './types';
+import { FirebaseFetchResponseType } from './types';
 import config from './config';
 
 firebase.initializeApp(config);
@@ -13,17 +13,26 @@ const provider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export const firebaseRequestsBody = (body: object) => {
-  return Object.entries(body).reduce((o, key) => ({ ...o, [key[0]]: { stringValue: key[1] } }), {});
+  const filteredBody = Object.entries(body).reduce(
+    (o, key) => (key[1] ? { ...o, [key[0]]: { stringValue: key[1] } } : {}),
+    {}
+  );
+  return filteredBody;
 };
 
-export const firebaseTransformResponse = (response: FirebaseResponseType) => {
+export const firebaseGetDocumentId = (nameField: string) => {
+  const slashedParts = nameField.split('/');
+  return slashedParts[slashedParts.length - 1];
+};
+
+export const firebaseTransformResponse = (response: FirebaseFetchResponseType) => {
   let filteredResponse: Record<string, unknown>[] = [];
   response.documents.forEach(document => {
     let eachDocument: Record<string, unknown> = {};
     Object.entries(document.fields).forEach(entry => {
       eachDocument[entry[0]] = entry[1]['stringValue'];
     });
-    filteredResponse.push(eachDocument);
+    filteredResponse.push({ id: firebaseGetDocumentId(document.name), document: eachDocument });
   });
   return filteredResponse;
 };

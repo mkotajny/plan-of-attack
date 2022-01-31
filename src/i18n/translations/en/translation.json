@@ -1,7 +1,8 @@
 {
   "COMMON": {
     "CONFIRM": "Confirm",
-    "CANCEL": "Cancel"
+    "CANCEL": "Cancel",
+    "GENERAL_ERROR": "The operation ended with an error"
   },
   "PAGES": {
     "WELCOME": {
@@ -33,6 +34,7 @@
       },
       "PLANS_FORM": {
         "CREATE_PLAN": "Create a new plan",
+        "EDIT_PLAN": "Edit the plan",
         "PLAN_TITLE_LABEL": "Title of the plan",
         "PLAN_TITLE_PLANCEHOLDER": "Enter the title",
         "VALIDATION": {
@@ -41,7 +43,7 @@
       },
       "SNACKBAR": {
         "PLAN_ADDED": "The new plan has been added",
-        "PLAN_ADD_ERROR": "Adding a new plan ended with an error"
+        "PLAN_UPDATED": "The plan has been updated"
       }
     }
   },

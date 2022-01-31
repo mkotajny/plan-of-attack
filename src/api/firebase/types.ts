@@ -1,7 +1,8 @@
-type FirebaseDocumentType = {
+export type FirebaseDocumentType = {
   fields: Object;
+  name: string;
 };
 
-export type FirebaseResponseType = {
+export type FirebaseFetchResponseType = {
   documents: FirebaseDocumentType[];
 };

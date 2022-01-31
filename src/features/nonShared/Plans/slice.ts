@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch, RootState } from 'store';
-import { PlansStateType, PlanType } from './types';
-import { firebaseTransformResponse } from 'api/firebase/firebase.utils';
+import { PlansStateType, PlanPatchRequestType, PlanType } from './types';
+import { firebaseTransformResponse, firebaseGetDocumentId } from 'api/firebase/firebase.utils';
 import { poaApi } from '../../../api/api';
 
 const initialState: PlansStateType = {
   apiRequestInProgress: false,
-  plans: [],
+  plansList: [],
 };
 
 export const plansSlice = createSlice({
@@ -14,20 +14,26 @@ export const plansSlice = createSlice({
   initialState,
   reducers: {
     setApiProcessingInProgress: (state, action: PayloadAction<boolean>) => {
+      //state mutation is not forbridden here ! (with redux toolkit)
       state.apiRequestInProgress = action.payload;
     },
     fetchPlans: (state, action: PayloadAction<PlanType[]>) => {
-      state.plans = action.payload;
+      state.plansList = action.payload;
     },
     addPlan: (state, action: PayloadAction<PlanType>) => {
-      state.plans.push(action.payload);
+      state.plansList.push(action.payload);
+      state.apiRequestInProgress = false;
+    },
+    updatePlan: (state, action: PayloadAction<PlanType>) => {
+      const foundIndex = state.plansList.findIndex(plan => plan.id === action.payload.id);
+      state.plansList[foundIndex as number] = action.payload;
       state.apiRequestInProgress = false;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addPlan, fetchPlans, setApiProcessingInProgress } = plansSlice.actions;
+export const { fetchPlans, addPlan, updatePlan, setApiProcessingInProgress } = plansSlice.actions;
 
 //Action creators as Thunks
 export const fetchPlansThunk = (payload: string) => async (dispatch: AppDispatch) => {
@@ -44,11 +50,18 @@ export const fetchPlansThunk = (payload: string) => async (dispatch: AppDispatch
   }
 };
 
-export const addPlanThunk = (payload: PlanType) => async (dispatch: AppDispatch) => {
+export const saveThunk = (payload: PlanPatchRequestType) => async (dispatch: AppDispatch) => {
+  const updateExisting = !!payload.id;
+  const apiRequest = updateExisting ? poaApi.endpoints.patchPlan : poaApi.endpoints.postPlan;
+  const reducerAction = updateExisting ? updatePlan : addPlan;
   dispatch(setApiProcessingInProgress(true));
   try {
-    await dispatch(poaApi.endpoints.addPlan.initiate(payload)).unwrap();
-    dispatch(addPlan(payload));
+    const response = await dispatch(apiRequest.initiate(payload)).unwrap();
+    const payloadForReducer = payload;
+    if (updateExisting) {
+      delete payloadForReducer.id;
+    }
+    dispatch(reducerAction({ id: firebaseGetDocumentId(response.name), document: payloadForReducer }));
   } catch {
     dispatch(setApiProcessingInProgress(false));
     throw new Error();
