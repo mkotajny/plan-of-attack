@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PlanDocumentType, PlanPatchRequestType } from '../features/nonShared/Plans/types';
+import { PlanDocumentType, PlanPatchRequestType } from '../features/Plans/types';
 import { firebaseRequestsBody } from 'api/firebase/firebase.utils';
 import { FirebaseFetchResponseType, FirebaseDocumentType } from 'api/firebase/types';
 import { RootState } from 'store';
