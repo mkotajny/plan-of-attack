@@ -1,19 +1,15 @@
 import { useState } from 'react';
 import { IconButton, Tooltip } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { useSnackbar } from 'notistack';
-import { useTranslation } from 'react-i18next';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { selectCurrentUser } from 'features/GoogleAuth/slice';
-import { deleteThunk, selectPlans } from '../slice';
 import DecisionModal from 'components/DecisionModal';
+import { deleteThunk, selectPlans } from '../slice';
 import { PlanDeletePropsType } from './types';
+import useToolkit from 'hooks/useToolkit';
 
 const PlanDelete = ({ planId }: PlanDeletePropsType) => {
   const dispatch = useDispatch();
-  const { enqueueSnackbar } = useSnackbar();
-  const { t } = useTranslation();
-  const currentUser = useSelector(selectCurrentUser);
+  const { t, currentUser, enqueueSnackbar } = useToolkit();
   const plans = useSelector(selectPlans);
   const [modalOpen, setModalOpen] = useState(false);
 

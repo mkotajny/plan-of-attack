@@ -1,11 +1,11 @@
 import { Typography, Fade } from '@mui/material';
 import { StatusIconPropsType } from './types';
-import { useTranslation } from 'react-i18next';
-import { sxStyles } from './styles';
-import { useStyles } from './styles';
 import WebAssetOffIcon from '@mui/icons-material/WebAssetOff';
 import AppBlockingIcon from '@mui/icons-material/AppBlocking';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import useToolkit from 'hooks/useToolkit';
+import { sxStyles } from './styles';
+import { useStyles } from './styles';
 
 export enum BigIconInfoTypesEnum {
   NoItems,
@@ -14,7 +14,7 @@ export enum BigIconInfoTypesEnum {
 }
 
 export const BigIconInfo = ({ messageKey, messageType }: StatusIconPropsType) => {
-  const { t } = useTranslation();
+  const { t } = useToolkit();
   const classes = useStyles();
 
   const renderIcon = () => {

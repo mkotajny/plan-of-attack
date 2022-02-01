@@ -1,12 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import ModalPowered from '../PoweredMuiComponents/ModalPowered';
 import FormSubmit from '../FormSubmit';
 import { DecisionModalPropTypes } from './types';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const DecisionModal = ({ title, question, open, inProgress = false, setOpen, onSubmit }: DecisionModalPropTypes) => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
 
   return (
     <ModalPowered title={title} open={open} setOpen={setOpen} small>

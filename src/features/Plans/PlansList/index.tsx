@@ -1,23 +1,19 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { TransitionGroup } from 'react-transition-group';
-import { useSnackbar } from 'notistack';
-import { useTranslation } from 'react-i18next';
-import { selectCurrentUser } from 'features/GoogleAuth/slice';
-import { selectPlans, fetchPlansThunk } from '../slice';
 import { List, Avatar, ListItemText, Fade, Collapse } from '@mui/material';
 import { BigIconInfo, BigIconInfoTypesEnum } from 'components/BigIconInfo';
+import { selectPlans, fetchPlansThunk } from '../slice';
 import PlanSave from '../PlanSave';
 import PlanDelete from '../PlanDelete';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles, sxStyles } from './styles';
 
 const PlansList = () => {
   const classes = useStyles();
-  const currentUser = useSelector(selectCurrentUser);
   const plans = useSelector(selectPlans).plansList;
   const dispatch = useDispatch();
-  const { t } = useTranslation();
-  const { enqueueSnackbar } = useSnackbar();
+  const { t, enqueueSnackbar, currentUser } = useToolkit();
 
   useEffect(() => {
     async function fetchPlans() {

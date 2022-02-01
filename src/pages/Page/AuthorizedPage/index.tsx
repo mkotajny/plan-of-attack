@@ -1,12 +1,11 @@
-import { selectCurrentUser } from 'features/GoogleAuth/slice';
-import { useSelector } from 'react-redux';
 import { CircularProgress } from '@mui/material';
 import { BigIconInfo, BigIconInfoTypesEnum } from 'components/BigIconInfo';
+import useToolkit from 'hooks/useToolkit';
 import { AuthorizedPagePropsType } from './types';
 import { useStyles } from './styles';
 
 const AuthorizedPage = ({ page: element }: AuthorizedPagePropsType) => {
-  const currentUser = useSelector(selectCurrentUser);
+  const { currentUser } = useToolkit();
   const classes = useStyles();
 
   const renderNotAuthorizedContent = () => {

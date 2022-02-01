@@ -1,11 +1,11 @@
 import { Button, CircularProgress } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import { FormSubmitPropsType } from './types';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const FormSubmit = ({ inProgress = false, formPristine = true, onCancel }: FormSubmitPropsType) => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
 
   return (
     <div className={classes.buttonsContainer}>

@@ -1,7 +1,7 @@
 import { Fade, Modal, Backdrop, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import { ModalPoweredPropsType } from './types';
 import DividerPowered from '../DividerPowered';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const ModalPowered = ({
@@ -12,7 +12,7 @@ const ModalPowered = ({
   small = false,
 }: ModalPoweredPropsType) => {
   const classes = useStyles(small)();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Escape') {

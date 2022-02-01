@@ -1,19 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 import { Button, CircularProgress, Avatar, Tooltip } from '@mui/material';
 import { Google, ExpandMore } from '@mui/icons-material';
-import { useSnackbar } from 'notistack';
 import { selectCurrentUser, signInThunk, toggleAuthSubscribtionThunk } from './slice';
 import UserMenu from './UserMenu';
 import { getErrorMessage } from './utils';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const GoogleAuth = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { t } = useTranslation();
-  const { enqueueSnackbar } = useSnackbar();
+  const { t, enqueueSnackbar } = useToolkit();
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>();
   const currentUser = useSelector(selectCurrentUser);
   const divRef = useRef<HTMLDivElement>(null);

@@ -1,12 +1,12 @@
 import { useStyles } from './styles';
-import { useTranslation } from 'react-i18next';
 import { Fab, Typography, Zoom, Slide } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { ButtonAddPropsType } from './types';
+import useToolkit from 'hooks/useToolkit';
 
 const ButtonAdd = ({ labelTranslationKey, onClick }: ButtonAddPropsType) => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
 
   return (
     <div className={classes.buttonAddRoot}>

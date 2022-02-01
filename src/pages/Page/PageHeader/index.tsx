@@ -1,12 +1,12 @@
 import { Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
 import { routeExists } from 'routing/utils';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const PageHeader = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
   const pathName = useLocation().pathname;
   const titleKey = pathName.toUpperCase().replace('/', '');
 

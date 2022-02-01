@@ -3,23 +3,19 @@ import { Form } from 'react-final-form';
 import { IconButton, Tooltip } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { useSnackbar } from 'notistack';
 import { saveThunk, selectPlans } from '../slice';
-import { selectCurrentUser } from 'features/GoogleAuth/slice';
 import TextFieldPowered from 'components/PoweredMuiComponents/TextFieldPowered';
 import ButtonAdd from 'components/ButtonAdd';
 import ModalPowered from 'components/PoweredMuiComponents/ModalPowered';
 import FormSubmit from 'components/FormSubmit';
 import { validatePlansForm } from './validation';
+import useToolkit from 'hooks/useToolkit';
 import { PlansSavePropsType } from './types';
 
 const PlanSave = ({ plan }: PlansSavePropsType) => {
-  const { t } = useTranslation();
+  const { t, enqueueSnackbar, currentUser } = useToolkit();
   const dispatch = useDispatch();
-  const { enqueueSnackbar } = useSnackbar();
   const plansState = useSelector(selectPlans);
-  const currentUser = useSelector(selectCurrentUser);
   const [modalOpen, setModalOpen] = useState(false);
   const updateExistingPlan = !!plan;
 

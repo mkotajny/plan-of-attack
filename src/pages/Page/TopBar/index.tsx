@@ -1,12 +1,12 @@
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import GoogleAuth from '../../../features/GoogleAuth';
 import Logo from '../../../assets/images/plan-of-attack-logo.png';
+import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
 const TopBar = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
   return (
     <Box className={classes.topBar} sx={{ flexGrow: 1 }}>
       <AppBar position='fixed'>

@@ -14,7 +14,6 @@ const Page = () => {
   return (
     <>
       <CssBaseline enableColorScheme />
-      {/* <Navigation /> */}
       <Background homePage={homePage}>
         <>
           {!homePage && <TopBar />}
