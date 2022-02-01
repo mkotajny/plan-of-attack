@@ -4,7 +4,7 @@ import FormSubmit from '../FormSubmit';
 import { DecisionModalPropTypes } from './types';
 import { useStyles } from './styles';
 
-const DecisionModal = ({ title, question, open, setOpen, onSubmit }: DecisionModalPropTypes) => {
+const DecisionModal = ({ title, question, open, inProgress = false, setOpen, onSubmit }: DecisionModalPropTypes) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -12,7 +12,7 @@ const DecisionModal = ({ title, question, open, setOpen, onSubmit }: DecisionMod
     <ModalPowered title={title} open={open} setOpen={setOpen} small>
       <div className={classes.planDeleteRoot}>{t(question)}</div>
       <form onSubmit={onSubmit}>
-        <FormSubmit inProgress={false} formPristine={false} onCancel={() => setOpen(false)} />
+        <FormSubmit inProgress={inProgress} formPristine={false} onCancel={() => setOpen(false)} />
       </form>
     </ModalPowered>
   );

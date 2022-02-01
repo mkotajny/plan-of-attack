@@ -25,7 +25,7 @@ export const firebaseGetDocumentId = (nameField: string) => {
   return slashedParts[slashedParts.length - 1];
 };
 
-export const firebaseTransformResponse = (response: FirebaseFetchResponseType) => {
+export const firebaseResponseTransform = (response: FirebaseFetchResponseType) => {
   let filteredResponse: Record<string, unknown>[] = [];
   response.documents.forEach(document => {
     let eachDocument: Record<string, unknown> = {};

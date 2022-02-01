@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppDispatch, RootState } from 'store';
-import { PlansStateType, PlanPatchRequestType, PlanType } from './types';
-import { firebaseTransformResponse, firebaseGetDocumentId } from 'api/firebase/firebase.utils';
+import { PlansStateType, PlanPatchRequestType, PlanDeleteRequestType, PlanType } from './types';
+import { firebaseResponseTransform, firebaseGetDocumentId } from 'api/firebase/firebase.utils';
 import { poaApi } from '../../api/api';
 
 const initialState: PlansStateType = {
@@ -29,11 +29,16 @@ export const plansSlice = createSlice({
       state.plansList[foundIndex as number] = action.payload;
       state.apiRequestInProgress = false;
     },
+    deletePlan: (state, action: PayloadAction<string>) => {
+      const foundIndex = state.plansList.findIndex(plan => plan.id === action.payload);
+      state.plansList.splice(foundIndex, 1);
+      state.apiRequestInProgress = false;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { fetchPlans, addPlan, updatePlan, setApiProcessingInProgress } = plansSlice.actions;
+export const { fetchPlans, addPlan, updatePlan, deletePlan, setApiProcessingInProgress } = plansSlice.actions;
 
 //Action creators as Thunks
 export const fetchPlansThunk = (payload: string) => async (dispatch: AppDispatch) => {
@@ -41,9 +46,20 @@ export const fetchPlansThunk = (payload: string) => async (dispatch: AppDispatch
   try {
     const response = await dispatch(poaApi.endpoints.fetchPlans.initiate(payload)).unwrap();
     if (response.documents) {
-      dispatch(fetchPlans(firebaseTransformResponse(response) as PlanType[]));
+      dispatch(fetchPlans(firebaseResponseTransform(response) as PlanType[]));
     }
     dispatch(setApiProcessingInProgress(false));
+  } catch {
+    dispatch(setApiProcessingInProgress(false));
+    throw new Error();
+  }
+};
+
+export const deleteThunk = (payload: PlanDeleteRequestType) => async (dispatch: AppDispatch) => {
+  dispatch(setApiProcessingInProgress(true));
+  try {
+    await dispatch(poaApi.endpoints.deletePlan.initiate(payload)).unwrap();
+    dispatch(deletePlan(payload.planId));
   } catch {
     dispatch(setApiProcessingInProgress(false));
     throw new Error();

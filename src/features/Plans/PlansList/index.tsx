@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { TransitionGroup } from 'react-transition-group';
 import { useSnackbar } from 'notistack';
 import { useTranslation } from 'react-i18next';
 import { selectCurrentUser } from 'features/GoogleAuth/slice';
 import { selectPlans, fetchPlansThunk } from '../slice';
-import { List, Avatar, ListItemText, Fade } from '@mui/material';
+import { List, Avatar, ListItemText, Fade, Collapse } from '@mui/material';
 import { BigIconInfo, BigIconInfoTypesEnum } from 'components/BigIconInfo';
 import PlanSave from '../PlanSave';
 import PlanDelete from '../PlanDelete';
@@ -37,26 +38,30 @@ const PlansList = () => {
       <div className={classes.listContainer}>
         <Fade in={true} timeout={1000} style={{ transitionDelay: `500ms` }}>
           <List sx={sxStyles.plansList}>
-            {plans.map(planItem => (
-              <div className={classes.listItem} key={planItem.document.title}>
-                <div className={classes.listItemContents}>
-                  <Avatar
-                    className={classes.listItemAvatar}
-                    alt={currentUser.profile.userName}
-                    src={currentUser.profile.imageUrl}
-                  />
-                  <ListItemText primary={planItem.document.title} secondary={currentUser.profile.userName} />
-                </div>
-                <div className={classes.listItemButtonsContainer}>
-                  <div className={classes.listItemButton}>
-                    <PlanSave plan={planItem} />
+            <TransitionGroup>
+              {plans.map(planItem => (
+                <Collapse key={planItem.id}>
+                  <div className={classes.listItem} key={planItem.id}>
+                    <div className={classes.listItemContents}>
+                      <Avatar
+                        className={classes.listItemAvatar}
+                        alt={currentUser.profile.userName}
+                        src={currentUser.profile.imageUrl}
+                      />
+                      <ListItemText primary={planItem.document.title} secondary={currentUser.profile.userName} />
+                    </div>
+                    <div className={classes.listItemButtonsContainer}>
+                      <div className={classes.listItemButton}>
+                        <PlanSave plan={planItem} />
+                      </div>
+                      <div className={classes.listItemButton}>
+                        <PlanDelete planId={planItem.id} />
+                      </div>
+                    </div>
                   </div>
-                  <div className={classes.listItemButton}>
-                    <PlanDelete planId={planItem.id} />
-                  </div>
-                </div>
-              </div>
-            ))}
+                </Collapse>
+              ))}
+            </TransitionGroup>
           </List>
         </Fade>
         {!plans.length && (

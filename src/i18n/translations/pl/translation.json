@@ -45,7 +45,8 @@
       },
       "SNACKBAR": {
         "PLAN_ADDED": "Nowy plan został dodany",
-        "PLAN_UPDATED": "Plan został zaktualizowany"
+        "PLAN_UPDATED": "Plan został zaktualizowany",
+        "PLAN_DELETED": "Plan został usunięty"
       }
     }
   },

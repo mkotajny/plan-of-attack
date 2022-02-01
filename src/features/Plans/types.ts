@@ -7,6 +7,11 @@ export type PlanPatchRequestType = PlanDocumentType & {
   id: string | undefined;
 };
 
+export type PlanDeleteRequestType = {
+  authorId: string | undefined;
+  planId: string;
+};
+
 export type PlanType = {
   id: string;
   document: PlanDocumentType;
