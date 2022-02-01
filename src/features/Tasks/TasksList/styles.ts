@@ -49,4 +49,4 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   },
 }));
 
-export const sxStyles = { plansList: { width: '100%', maxWidth: 900 } };
+export const sxStyles = { tasksList: { width: '100%', maxWidth: 900 } };

@@ -12,8 +12,8 @@
       "BUTTON_START": "Start",
       "BUTTON_START_TOOLTIP": "Coming soon ..."
     },
-    "MYPLANS": {
-      "TITLE": "My Plans"
+    "MYTASKS": {
+      "TITLE": "My Tasks"
     }
   },
   "FEATURES": {
@@ -26,33 +26,33 @@
         "INTERRUPTED_BY_USER": "the process interrupted by the user"
       }
     },
-    "PLANS": {
-      "PLANS_LIST": {
+    "TASKS": {
+      "TASKS_LIST": {
         "SNACKBAR": {
-          "ERROR_FETCH_PLANS": "Failed to download plans"
+          "ERROR_FETCH_TASKS": "Failed to download tasks"
         }
       },
-      "PLANS_FORM": {
-        "CREATE_PLAN": "Create a new plan",
-        "EDIT_PLAN": "Edit the plan",
-        "DELETE_PLAN": "Delete the plan",
-        "DELETE_PLAN_QUESTION": "Are you sure you want to delete this plan ?",
-        "PLAN_TITLE_LABEL": "Title of the plan",
-        "PLAN_TITLE_PLANCEHOLDER": "Enter the title",
+      "TASKS_FORM": {
+        "CREATE_TASK": "Create a new task",
+        "EDIT_TASK": "Edit the task",
+        "DELETE_TASK": "Delete the task",
+        "DELETE_TASK_QUESTION": "Are you sure you want to delete this task ?",
+        "TASK_TITLE_LABEL": "Title of the task",
+        "TASK_TITLE_TASKCEHOLDER": "Enter the title",
         "VALIDATION": {
-          "PLAN_TITLE_DUPLICATE": "You've already created a plan with this title"
+          "TASK_TITLE_DUPLICATE": "You've already created a task with this title"
         }
       },
       "SNACKBAR": {
-        "PLAN_ADDED": "The new plan has been added",
-        "PLAN_UPDATED": "The plan has been updated",
-        "PLAN_DELETED": "The plan has been deleted"
+        "TASK_ADDED": "The new task has been added",
+        "TASK_UPDATED": "The task has been updated",
+        "TASK_DELETED": "The task has been deleted"
       }
     }
   },
   "COMPONENTS": {
     "NO_CONTENT": {
-      "MESSAGE": "No plans were created 🤷"
+      "MESSAGE": "No tasks were created 🤷"
     }
   },
   "ROUTING": {
