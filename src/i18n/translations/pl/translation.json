@@ -34,7 +34,9 @@
       },
       "PLANS_FORM": {
         "CREATE_PLAN": "Załóż nowy plan",
-        "EDIT_PLAN": "Eduj plan",
+        "EDIT_PLAN": "Edytuj plan",
+        "DELETE_PLAN": "Usuń plan",
+        "DELETE_PLAN_QUESTION": "Czy na pewno chcesz usunąć ten plan ?",
         "PLAN_TITLE_LABEL": "Tytuł planu",
         "PLAN_TITLE_PLANCEHOLDER": "Podaj tytuł",
         "VALIDATION": {
@@ -43,7 +45,8 @@
       },
       "SNACKBAR": {
         "PLAN_ADDED": "Nowy plan został dodany",
-        "PLAN_UPDATED": "Plan został zaktualizowany"
+        "PLAN_UPDATED": "Plan został zaktualizowany",
+        "PLAN_DELETED": "Plan został usunięty"
       }
     }
   },

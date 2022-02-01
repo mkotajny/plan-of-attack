@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './features/nonShared/GoogleAuth/slice';
-import plansReducer from './features/nonShared/Plans/slice';
+import authReducer from './features/GoogleAuth/slice';
+import plansReducer from './features/Plans/slice';
 import { poaApi } from 'api/api';
 
 const store = configureStore({

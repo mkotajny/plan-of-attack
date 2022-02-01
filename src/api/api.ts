@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PlanDocumentType, PlanPatchRequestType } from '../features/nonShared/Plans/types';
+import { PlanDocumentType, PlanPatchRequestType, PlanDeleteRequestType } from '../features/Plans/types';
 import { firebaseRequestsBody } from 'api/firebase/firebase.utils';
 import { FirebaseFetchResponseType, FirebaseDocumentType } from 'api/firebase/types';
 import { RootState } from 'store';
@@ -26,20 +26,20 @@ export const poaApi = createApi({
       query: body => ({
         url: `planOwners/${body.authorId}/plans`,
         method: 'POST',
-        body: {
-          name: '',
-          fields: firebaseRequestsBody(body),
-        },
+        body: { fields: firebaseRequestsBody(body) },
       }),
     }),
     patchPlan: builder.mutation<FirebaseDocumentType, Partial<PlanPatchRequestType>>({
       query: body => ({
         url: `planOwners/${body.authorId}/plans/${body.id}`,
         method: 'PATCH',
-        body: {
-          name: '',
-          fields: firebaseRequestsBody({ authorId: body.authorId, title: body.title }),
-        },
+        body: { fields: firebaseRequestsBody({ authorId: body.authorId, title: body.title }) },
+      }),
+    }),
+    deletePlan: builder.mutation<void, Partial<PlanDeleteRequestType>>({
+      query: body => ({
+        url: `planOwners/${body.authorId}/plans/${body.planId}`,
+        method: 'DELETE',
       }),
     }),
   }),
