@@ -1,4 +1,9 @@
 {
+  "COMMON": {
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "GENERAL_ERROR": "The operation ended with an error"
+  },
   "PAGES": {
     "WELCOME": {
       "FLAG_TOOLTIP": "Switch language",
@@ -7,11 +12,8 @@
       "BUTTON_START": "Start",
       "BUTTON_START_TOOLTIP": "Coming soon ..."
     },
-    "PLANS": {
-      "TITLE": "Plans Review",
-      "CONTENT_SIGNED_OUT": "Sign in to see more ...",
-      "CONTENT_WELCOME": "Welcome",
-      "CONTENT_SIGNED_IN": "More of beautiful features coming soon"
+    "MYTASKS": {
+      "TITLE": "My Tasks"
     }
   },
   "FEATURES": {
@@ -20,11 +22,44 @@
       "SIGN_IN_TOOLTIP": "Sign in via Google account",
       "SIGN_OUT": "Sign out",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Google authentication failed"
+        "ERROR_HEADER": "Google authentication failed",
+        "INTERRUPTED_BY_USER": "the process interrupted by the user"
+      }
+    },
+    "TASKS": {
+      "TASKS_LIST": {
+        "SNACKBAR": {
+          "ERROR_FETCH_TASKS": "Failed to download tasks"
+        }
+      },
+      "TASKS_FORM": {
+        "CREATE_TASK": "Create a new task",
+        "EDIT_TASK": "Edit the task",
+        "DELETE_TASK": "Delete the task",
+        "DELETE_TASK_QUESTION": "Are you sure you want to delete this task ?",
+        "TASK_TITLE_LABEL": "Title of the task",
+        "TASK_TITLE_TASKCEHOLDER": "Enter the title",
+        "VALIDATION": {
+          "TASK_TITLE_DUPLICATE": "You've already created a task with this title"
+        }
+      },
+      "SNACKBAR": {
+        "TASK_ADDED": "The new task has been added",
+        "TASK_UPDATED": "The task has been updated",
+        "TASK_DELETED": "The task has been deleted"
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "No tasks were created 🤷"
+    }
+  },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Page does not exists ..."
+    "ROUTE_DOESNT_EXISTS": "Page does not exists ...",
+    "CONTENT_SIGNED_OUT": "Sign in to see more ..."
+  },
+  "VALIDATION": {
+    "FIELD_REQUIRED": "Required"
   }
 }

@@ -1,4 +1,9 @@
 {
+  "COMMON": {
+    "CONFIRM": "Potwierdź",
+    "CANCEL": "Anuluj",
+    "GENERAL_ERROR": "Operacja zakończyła się błędem"
+  },
   "PAGES": {
     "WELCOME": {
       "FLAG_TOOLTIP": "Przełącz język",
@@ -7,11 +12,8 @@
       "BUTTON_START": "ROZPOCZNIJ",
       "BUTTON_START_TOOLTIP": "Już wkrótce ..."
     },
-    "PLANS": {
-      "TITLE": "Przegląd planów",
-      "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ...",
-      "CONTENT_WELCOME": "Witaj",
-      "CONTENT_SIGNED_IN": "Więcej pięknych ficzerów wkrótce"
+    "MYTASKS": {
+      "TITLE": "Moje Zadania"
     }
   },
   "FEATURES": {
@@ -20,11 +22,44 @@
       "SIGN_IN_TOOLTIP": "Zaloguj się Twoim kontem Google",
       "SIGN_OUT": "Wyloguj się",
       "NOTIFICATION_SNAKS": {
-        "OTHER_ERROR": "Błędne logowanie przez Google"
+        "ERROR_HEADER": "Błędne logowanie przez Google",
+        "INTERRUPTED_BY_USER": "proces przerwany przez użytkownika"
+      }
+    },
+    "TASKS": {
+      "TASKS_LIST": {
+        "SNACKBAR": {
+          "ERROR_FETCH_TASKS": "Pobranie zadań zakończone niepowodzeniem"
+        }
+      },
+      "TASKS_FORM": {
+        "CREATE_TASK": "Załóż nowe zadanie",
+        "EDIT_TASK": "Edytuj zadanie",
+        "DELETE_TASK": "Usuń zadanie",
+        "DELETE_TASK_QUESTION": "Czy na pewno chcesz usunąć to zadanie ?",
+        "TASK_TITLE_LABEL": "Tytuł zadania",
+        "TASK_TITLE_TASKCEHOLDER": "Podaj tytuł",
+        "VALIDATION": {
+          "TASK_TITLE_DUPLICATE": "Już utworzyłeś zadanie o tym tytule"
+        }
+      },
+      "SNACKBAR": {
+        "TASK_ADDED": "Nowe zadanie zostało dodany",
+        "TASK_UPDATED": "Zadanie został zaktualizowany",
+        "TASK_DELETED": "Zadanie został usunięty"
       }
     }
   },
+  "COMPONENTS": {
+    "NO_CONTENT": {
+      "MESSAGE": "Nie założono jeszcze żadnego zadania 🤷"
+    }
+  },
   "ROUTING": {
-    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ..."
+    "ROUTE_DOESNT_EXISTS": "Strona nie istnieje ...",
+    "CONTENT_SIGNED_OUT": "Zaloguj się aby zobaczyć więcej ..."
+  },
+  "VALIDATION": {
+    "FIELD_REQUIRED": "Wymagane"
   }
 }

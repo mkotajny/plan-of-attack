@@ -2,13 +2,13 @@ import { Menu, MenuItem, Divider, ListItemIcon } from '@mui/material';
 import { Logout } from '@mui/icons-material';
 import { UserMenuPropsType } from './types';
 import { useStyles, menuPaperProps } from './styles';
-import { useTranslation } from 'react-i18next';
-import { auth } from 'firebase/firebase.utils';
+import { auth } from 'api/firebase/firebase.utils';
+import useToolkit from '../../../hooks/useToolkit';
 
 const UserMenu = (props: UserMenuPropsType) => {
   const open = Boolean(props.anchorElement);
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t } = useToolkit();
 
   return (
     <Menu
