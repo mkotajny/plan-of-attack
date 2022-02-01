@@ -3,31 +3,32 @@ import { Form } from 'react-final-form';
 import { IconButton, Tooltip } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector, useDispatch } from 'react-redux';
-import { saveThunk, selectPlans } from '../slice';
+import { isEmpty } from 'lodash';
+import { saveThunk, selectTasks } from '../slice';
 import TextFieldPowered from 'components/PoweredMuiComponents/TextFieldPowered';
 import ButtonAdd from 'components/ButtonAdd';
 import ModalPowered from 'components/PoweredMuiComponents/ModalPowered';
 import FormSubmit from 'components/FormSubmit';
-import { validatePlansForm } from './validation';
+import { validateTasksForm } from './validation';
 import useToolkit from 'hooks/useToolkit';
-import { PlansSavePropsType } from './types';
+import { TasksSavePropsType } from './types';
 
-const PlanSave = ({ plan }: PlansSavePropsType) => {
+const TaskSave = ({ task }: TasksSavePropsType) => {
   const { t, enqueueSnackbar, currentUser } = useToolkit();
   const dispatch = useDispatch();
-  const plansState = useSelector(selectPlans);
+  const tasksState = useSelector(selectTasks);
   const [modalOpen, setModalOpen] = useState(false);
-  const updateExistingPlan = !!plan;
+  const updateExistingTask = !!task;
 
   const onSubmit = async (values: { title: string }) => {
     try {
       const payload = {
-        id: plan?.id,
+        id: task?.id,
         authorId: currentUser.profile.userId,
         title: values.title,
       };
       await dispatch(saveThunk(payload));
-      enqueueSnackbar(t(`FEATURES.PLANS.SNACKBAR.PLAN_${updateExistingPlan ? 'UPDATED' : 'ADDED'}`), {
+      enqueueSnackbar(t(`FEATURES.TASKS.SNACKBAR.TASK_${updateExistingTask ? 'UPDATED' : 'ADDED'}`), {
         variant: 'success',
       });
       setModalOpen(false);
@@ -38,39 +39,40 @@ const PlanSave = ({ plan }: PlansSavePropsType) => {
 
   return (
     <>
-      {plan ? (
-        <Tooltip title={t('FEATURES.PLANS.PLANS_FORM.EDIT_PLAN') || ''}>
+      {task ? (
+        <Tooltip title={t('FEATURES.TASKS.TASKS_FORM.EDIT_TASK') || ''}>
           <IconButton color='primary' aria-label='delete' size='small' onClick={() => setModalOpen(true)}>
             <EditIcon />
           </IconButton>
         </Tooltip>
       ) : (
-        <ButtonAdd labelTranslationKey='FEATURES.PLANS.PLANS_FORM.CREATE_PLAN' onClick={() => setModalOpen(true)} />
+        <ButtonAdd labelTranslationKey='FEATURES.TASKS.TASKS_FORM.CREATE_TASK' onClick={() => setModalOpen(true)} />
       )}
       <ModalPowered
-        title={`FEATURES.PLANS.PLANS_FORM.${updateExistingPlan ? 'EDIT' : 'CREATE'}_PLAN`}
+        title={`FEATURES.TASKS.TASKS_FORM.${updateExistingTask ? 'EDIT' : 'CREATE'}_TASK`}
         open={modalOpen}
         setOpen={setModalOpen}
       >
         <Form
           onSubmit={onSubmit}
-          validate={values => validatePlansForm(t, values, plansState.plansList, updateExistingPlan)}
-          initialValues={{ title: plan?.document.title }}
-          render={({ handleSubmit, pristine /*,form, values*/ }) => (
+          validate={values => validateTasksForm(t, values, tasksState.tasksList, updateExistingTask)}
+          initialValues={{ title: task?.document.title }}
+          render={({ handleSubmit, pristine, errors }) => (
             <form onSubmit={handleSubmit}>
               <TextFieldPowered
-                label={t('FEATURES.PLANS.PLANS_FORM.PLAN_TITLE_LABEL')}
+                label={t('FEATURES.TASKS.TASKS_FORM.TASK_TITLE_LABEL')}
                 name='title'
                 multiline
-                disabled={plansState.apiRequestInProgress}
+                disabled={tasksState.apiRequestInProgress}
                 autoFocus
                 inputProps={{ maxLength: 100 }}
                 fullWidth={true}
               />
               <FormSubmit
-                inProgress={plansState.apiRequestInProgress}
+                inProgress={tasksState.apiRequestInProgress}
                 formPristine={pristine}
                 onCancel={setModalOpen}
+                formWithErrors={!isEmpty(errors)}
               />
             </form>
           )}
@@ -80,4 +82,4 @@ const PlanSave = ({ plan }: PlansSavePropsType) => {
   );
 };
 
-export default PlanSave;
+export default TaskSave;

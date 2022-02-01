@@ -12,8 +12,8 @@
       "BUTTON_START": "ROZPOCZNIJ",
       "BUTTON_START_TOOLTIP": "Już wkrótce ..."
     },
-    "MYPLANS": {
-      "TITLE": "Moje Plany"
+    "MYTASKS": {
+      "TITLE": "Moje Zadania"
     }
   },
   "FEATURES": {
@@ -26,33 +26,33 @@
         "INTERRUPTED_BY_USER": "proces przerwany przez użytkownika"
       }
     },
-    "PLANS": {
-      "PLANS_LIST": {
+    "TASKS": {
+      "TASKS_LIST": {
         "SNACKBAR": {
-          "ERROR_FETCH_PLANS": "Pobranie planów zakończone niepowodzeniem"
+          "ERROR_FETCH_TASKS": "Pobranie zadań zakończone niepowodzeniem"
         }
       },
-      "PLANS_FORM": {
-        "CREATE_PLAN": "Załóż nowy plan",
-        "EDIT_PLAN": "Edytuj plan",
-        "DELETE_PLAN": "Usuń plan",
-        "DELETE_PLAN_QUESTION": "Czy na pewno chcesz usunąć ten plan ?",
-        "PLAN_TITLE_LABEL": "Tytuł planu",
-        "PLAN_TITLE_PLANCEHOLDER": "Podaj tytuł",
+      "TASKS_FORM": {
+        "CREATE_TASK": "Załóż nowe zadanie",
+        "EDIT_TASK": "Edytuj zadanie",
+        "DELETE_TASK": "Usuń zadanie",
+        "DELETE_TASK_QUESTION": "Czy na pewno chcesz usunąć to zadanie ?",
+        "TASK_TITLE_LABEL": "Tytuł zadania",
+        "TASK_TITLE_TASKCEHOLDER": "Podaj tytuł",
         "VALIDATION": {
-          "PLAN_TITLE_DUPLICATE": "Już utworzyłeś plan o tym tytule"
+          "TASK_TITLE_DUPLICATE": "Już utworzyłeś zadanie o tym tytule"
         }
       },
       "SNACKBAR": {
-        "PLAN_ADDED": "Nowy plan został dodany",
-        "PLAN_UPDATED": "Plan został zaktualizowany",
-        "PLAN_DELETED": "Plan został usunięty"
+        "TASK_ADDED": "Nowe zadanie zostało dodany",
+        "TASK_UPDATED": "Zadanie został zaktualizowany",
+        "TASK_DELETED": "Zadanie został usunięty"
       }
     }
   },
   "COMPONENTS": {
     "NO_CONTENT": {
-      "MESSAGE": "Nie założono jeszcze żadnego planu 🤷"
+      "MESSAGE": "Nie założono jeszcze żadnego zadania 🤷"
     }
   },
   "ROUTING": {

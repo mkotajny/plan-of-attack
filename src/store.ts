@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './features/GoogleAuth/slice';
-import plansReducer from './features/Plans/slice';
+import tasksReducer from './features/Tasks/slice';
 import { poaApi } from 'api/api';
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    plans: plansReducer,
+    tasks: tasksReducer,
     [poaApi.reducerPath]: poaApi.reducer,
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(poaApi.middleware),

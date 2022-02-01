@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { PlanDocumentType, PlanPatchRequestType, PlanDeleteRequestType } from '../features/Plans/types';
+import { TaskDocumentType, TaskPatchRequestType, TaskDeleteRequestType } from '../features/Tasks/types';
 import { firebaseRequestsBody } from 'api/firebase/firebase.utils';
 import { FirebaseFetchResponseType, FirebaseDocumentType } from 'api/firebase/types';
 import { RootState } from 'store';
@@ -19,30 +19,28 @@ export const poaApi = createApi({
     },
   }),
   endpoints: builder => ({
-    fetchPlans: builder.query<FirebaseFetchResponseType, string>({
-      query: authorId => `planOwners/${authorId}/plans`,
+    fetchTasks: builder.query<FirebaseFetchResponseType, string>({
+      query: authorId => `planOwners/${authorId}/tasks`,
     }),
-    postPlan: builder.mutation<FirebaseDocumentType, Partial<PlanDocumentType>>({
+    postTask: builder.mutation<FirebaseDocumentType, Partial<TaskDocumentType>>({
       query: body => ({
-        url: `planOwners/${body.authorId}/plans`,
+        url: `planOwners/${body.authorId}/tasks`,
         method: 'POST',
         body: { fields: firebaseRequestsBody(body) },
       }),
     }),
-    patchPlan: builder.mutation<FirebaseDocumentType, Partial<PlanPatchRequestType>>({
+    patchTask: builder.mutation<FirebaseDocumentType, Partial<TaskPatchRequestType>>({
       query: body => ({
-        url: `planOwners/${body.authorId}/plans/${body.id}`,
+        url: `planOwners/${body.authorId}/tasks/${body.id}`,
         method: 'PATCH',
         body: { fields: firebaseRequestsBody({ authorId: body.authorId, title: body.title }) },
       }),
     }),
-    deletePlan: builder.mutation<void, Partial<PlanDeleteRequestType>>({
+    deleteTask: builder.mutation<void, Partial<TaskDeleteRequestType>>({
       query: body => ({
-        url: `planOwners/${body.authorId}/plans/${body.planId}`,
+        url: `planOwners/${body.authorId}/tasks/${body.taskId}`,
         method: 'DELETE',
       }),
     }),
   }),
 });
-
-export const { useFetchPlansQuery, usePostPlanMutation, usePatchPlanMutation } = poaApi;

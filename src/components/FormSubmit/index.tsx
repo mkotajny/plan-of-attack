@@ -3,7 +3,7 @@ import { FormSubmitPropsType } from './types';
 import useToolkit from 'hooks/useToolkit';
 import { useStyles } from './styles';
 
-const FormSubmit = ({ inProgress = false, formPristine = true, onCancel }: FormSubmitPropsType) => {
+const FormSubmit = ({ inProgress = false, formPristine = true, formWithErrors, onCancel }: FormSubmitPropsType) => {
   const classes = useStyles();
   const { t } = useToolkit();
 
@@ -11,7 +11,7 @@ const FormSubmit = ({ inProgress = false, formPristine = true, onCancel }: FormS
     <div className={classes.buttonsContainer}>
       <div className={classes.formButton}>
         {!inProgress && (
-          <Button variant='contained' type='submit' disabled={formPristine}>
+          <Button variant='contained' type='submit' disabled={formPristine || formWithErrors}>
             {t('COMMON.CONFIRM')}
           </Button>
         )}

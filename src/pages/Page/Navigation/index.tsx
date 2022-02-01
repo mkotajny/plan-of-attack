@@ -7,7 +7,6 @@ const Navigation = () => {
   return (
     <nav className={styles.navigation}>
       <Link to='/'>{t('NAVIGATION.HOME')}</Link>
-      {/* <Link to='/otherPage'>{t('NAVIGATION.OTHER_PAGE')}</Link> */}
     </nav>
   );
 };

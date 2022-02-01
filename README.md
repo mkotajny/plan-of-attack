@@ -8,9 +8,9 @@
 
 **_"Plan of Attack"_** is an application for **creation of any plan** (e.g. **action plan** or any nested set of items).
 
-The application is in the ongoing development phase. The staging server of the working app (demo) is [here](https://plan-of-attack.netlify.app).
+The application is in the ongoing development phase. The staging server of the working app (**demo**) is [here](https://plan-of-attack.netlify.app).
 
-This project is bootstrapped with [another-react-starter](https://github.com/mkotajny/another-react-starter) .
+This project is bootstrapped with my other (boilerplate-type) project named [another-react-starter](https://github.com/mkotajny/another-react-starter), and uses [Firebase](https://firebase.google.com) (with a "Firestore" cloud database) as a backend.
 <br/><br/>
 
 # Modules in the project
@@ -54,12 +54,24 @@ The project contains many parts. Some of them are components, some of them are l
 		<tr>
 			<td style="border: 1px solid">Javascript libraries</td>
 			<td style="border: 1px solid; text-align: center">
+				<img src="https://user-images.githubusercontent.com/33925073/152032013-a03194f1-7b86-45e5-b5f9-7cbb6d71d231.png" />
+				<br/>
+				<a href="https://final-form.org/react" target="_blank"><b>React Final Form</b></a>
+			</td>
+			<td style="border: 1px solid">
+				High performance subscription-based form state management for React
+			</td>
+			<td style="border: 1px solid">-</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid">Javascript libraries</td>
+			<td style="border: 1px solid; text-align: center">
 				<img src="https://user-images.githubusercontent.com/33925073/148905881-ee9bea32-eae6-493e-8484-fca24d862324.png" />
 				<br/>
 				<a href="https://redux.js.org/" target="_blank"><b>Redux</b></a>
 			</td>
 			<td style="border: 1px solid">
-				A Predictable State Container for JS Apps
+				A Predictable State Container for JS Apps. This application uses a new way of Redux-configuration of - the use of <a href="https://redux-toolkit.js.org" target="_blank"><b>Redux Toolkit</b></a>, along with (powerful fetching library) <a href="https://redux-toolkit.js.org/rtk-query/overview" target="_blank"><b>RTK QUERY</b></a>, "store-slices" concept and hooks for getting state and dispatching actions.
 			</td>
 			<td style="border: 1px solid">-</td>
 		</tr>
@@ -143,7 +155,7 @@ git clone https://github.com/mkotajny/plan-of-attack.git
 // install the project
 yarn install
 
-//fill the .env file wih proper keys/credentials (contact with mkotajny@gmail.com to get these values)
+//fill the .env file wih proper keys/credentials with values generated from a new Firebase project (with google-authentication and firestore database activated)
 
 // run the project
 yarn start
