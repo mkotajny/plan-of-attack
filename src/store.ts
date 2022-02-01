@@ -1,14 +1,24 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { AnyAction, configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from './features/GoogleAuth/slice';
 import tasksReducer from './features/Tasks/slice';
+import { authSlice } from './features/GoogleAuth/slice';
 import { poaApi } from 'api/api';
 
+const appReducer = combineReducers({
+  auth: authReducer,
+  tasks: tasksReducer,
+  [poaApi.reducerPath]: poaApi.reducer,
+});
+
+const rootReducer = (state: ReturnType<typeof appReducer> | undefined, action: AnyAction) => {
+  if (action.type === authSlice.actions.signOut.type) {
+    return appReducer(undefined, { type: undefined });
+  }
+  return appReducer(state, action);
+};
+
 const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    tasks: tasksReducer,
-    [poaApi.reducerPath]: poaApi.reducer,
-  },
+  reducer: rootReducer,
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(poaApi.middleware),
 });
 
