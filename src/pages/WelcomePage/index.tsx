@@ -23,6 +23,7 @@ const WelcomePage = () => {
       </Typography>
       <div className={classes.buttonStart}>
         <Button
+          role='start-button'
           variant='contained'
           color='warning'
           size='large'
