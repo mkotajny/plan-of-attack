@@ -16,6 +16,7 @@ const LanguageSwitcher = () => {
   return (
     <Tooltip placement='left' arrow title={t('PAGES.WELCOME.FLAG_TOOLTIP')!}>
       <div
+        role='language-switcher'
         className={classes.flagContainer}
         onClick={() => {
           changeLanguage(i18n.language === 'en' ? 'pl' : 'en');
