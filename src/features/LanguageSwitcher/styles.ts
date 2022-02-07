@@ -9,8 +9,11 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
     border: '2px solid #e6e6e6',
     height: '29px',
     borderRadius: 5,
-    '& $img': {
-      width: '40px',
-    },
+    // '& $img': {
+    //   width: '40px',
+    // },
+  },
+  flagImg: {
+    width: '40px',
   },
 }));
