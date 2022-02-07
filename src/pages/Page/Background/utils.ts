@@ -4,7 +4,7 @@ import FootballBoardImage from '../../../assets/images/backgrounds/football-boar
 import WarPlanesImage from '../../../assets/images/backgrounds/war-planes.jpg';
 
 const backgrounds = [
-  { fileName: BattlePlanImage, overlay: 0.85 },
+  { fileName: BattlePlanImage, overlay: 0.9 },
   { fileName: FootballBoardImage, overlay: 0.8 },
   { fileName: WarPlanesImage, overlay: 0.8 },
 ];

@@ -10,6 +10,8 @@ module.exports = {
     'plugin:import/typescript',
     'prettier',
     'eslint-config-prettier',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,7 +21,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'security'],
+  plugins: ['react', '@typescript-eslint', 'security', 'testing-library', 'jest-dom'],
   rules: {
     'no-console': 'warn',
     'react/jsx-props-no-spreading': 'error',
@@ -32,7 +34,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'off',
-
+    'testing-library/await-async-query': 'error',
+    'testing-library/no-await-sync-query': 'error',
+    'testing-library/no-dom-import': 'off',
     'react/function-component-definition': [
       2,
       {
@@ -41,4 +45,10 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
 };

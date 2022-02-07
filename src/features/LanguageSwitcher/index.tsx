@@ -16,12 +16,13 @@ const LanguageSwitcher = () => {
   return (
     <Tooltip placement='left' arrow title={t('PAGES.WELCOME.FLAG_TOOLTIP')!}>
       <div
+        role='language-switcher'
         className={classes.flagContainer}
         onClick={() => {
           changeLanguage(i18n.language === 'en' ? 'pl' : 'en');
         }}
       >
-        <img src={i18n.language === 'en' ? flagPL : flagUK} />
+        <img className={classes.flagImg} src={i18n.language === 'en' ? flagPL : flagUK} aria-label='switch language' />
       </div>
     </Tooltip>
   );
